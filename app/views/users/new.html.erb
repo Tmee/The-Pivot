@@ -1,29 +1,44 @@
-<center><h2>Sign up to place an order for delicious Nokogiri sushi!</h2></center>
+<center><h2>Sign up to post a job or apply for one!</h2></center>
+<center><h3>If you would like to sign up as a business please fill out the form on the right, otherwise leave it blank.</h3></center>
 <% if @errors %>
   <% @errors.each do |error| %>
     <%= content_tag :h3, error %><br>
   <% end %>
 <% end %>
-<div class="formfield">
-<%= form_for(@user) do |form| %>
-  <div class="field">
-    <%= form.label :email %><br>
-    <%= form.text_field :email %><br><br>
-
-    <%= form.label :full_name %><br>
-    <%= form.text_field :full_name %><br><br>
-
-    <%= form.label :user_name %><br>
-    <%= form.text_field :user_name %><br><br>
-
-    <%= form.label :password %><br>
-    <%= form.password_field :password %><br><br>
-
-    <%= form.label :password_confirmation %><br>
-    <%= form.password_field :password_confirmation %><br><br>
+<div id="container">
+  <div id="statement_left">
+    <div id="box">
+      <% @user="zach" %>
+      <%= form_for @user do |f| %>
+      <%= f.text_field :fullname, placeholder: 'Full Name', size: "60x60" %></br></br>
+      <%= f.text_field :username, placeholder: 'Username', size: "20x30" %></br></br>
+      <%= f.text_field :email, placeholder: 'Email', size: "20x30" %></br></br>
+      <%= f.password_field   :password, placeholder: 'Password', size: "20x30" %></br></br>
+      <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "20x30" %></br></br>
+      Upload a headshot<br>
+      <%= f.file_field :picture , placeholder: 'Picture'%></br></br>
+      Upload a resume<br>
+      <%= f.file_field :resume , placeholder: 'Resume'%>
+      <% end %>
+    </div>
   </div>
-  <div class="actions">
-    <%= form.submit %>
+  <div id="list_right">
+    <div id="box">
+      <% @business="zach" %>
+      <%= form_for @business do |f| %>
+      <%= f.text_field :business_name, placeholder: 'Business Name', size: "60x60" %></br></br>
+      <%= f.text_field :address, placeholder: 'Address', size: "20x30" %></br></br>
+      <%= f.text_field :discription, placeholder: 'Discription', size: "20x30" %></br></br>
+      <%= f.text_field :fullname, placeholder: 'Full Name', size: "60x60" %></br></br>
+      <%= f.text_field :username, placeholder: 'Username', size: "20x30" %></br></br>
+      <%= f.text_field :email, placeholder: 'Email', size: "20x30" %></br></br>
+      <%= f.password_field   :password, placeholder: 'Password', size: "20x30" %></br></br>
+      <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "20x30" %></br></br>
+      <% end %>
+    </div>
   </div>
-<% end %>
 </div>
+<button id="jobs_button" type="button" onclick="alert('HAHAHA GOTCHA!')"><h1>Register
+  NOW!</h1></button>
+
+
