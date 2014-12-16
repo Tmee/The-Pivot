@@ -14,12 +14,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'aws'
 gem 'fog'
+gem 'simplecov'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
 group :development, :test do
+  gem 'simplecov'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'

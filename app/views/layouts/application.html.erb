@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nokogiri Sushi</title>
+  <title>EmployMe</title>
   <link rel="shortcut icon" href="assets/favicon.ico"/>
   <link href='http://fonts.googleapis.com/css?family=Lato:900,400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,12 +14,7 @@
   <% end %>
 
   <%= render "/layouts/header" %>
-  <div class="page-wrapper">
-    <div class="content">
-      <img src="/assets/sushi.png" border="0" alt="sushi" width="100%">
-      <%= yield %>
-    </div>
-  </div>
+  <%= yield %>
   <%= render "/layouts/footer" %>
 </body>
 </html>
