@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :orders
+  belongs_to :business
   has_secure_password
 
   validates :password, confirmation: true
