@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141216170726) do
 
   add_index "addresses", ["order_id"], name: "index_addresses_on_order_id", using: :btree
 
-  create_table "business", force: true do |t|
+  create_table "businesses", force: true do |t|
     t.string "name"
     t.string "address"
     t.text   "description"

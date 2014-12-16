@@ -3,15 +3,15 @@ class BusinessesController < ApplicationController
   # before_action :require_admin, only: [:index]
 
   def index
-    @business = Businesses.all
+    @business = Business.all
   end
 
   def new
-    @business = Businesses.new
+    @business = Business.new
   end
 
   def create
-    @business = Businesses.new(user_params)
+    @business = Business.new(user_params)
 
     if @business.save
       session[:email] = @business.id
