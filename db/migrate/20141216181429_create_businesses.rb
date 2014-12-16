@@ -3,6 +3,10 @@ class CreateBusinesses < ActiveRecord::Migration
     create_table :businesses do |t|
       t.string :name
       t.string :address
+      t.string :phone
+      t.string :email
+      t.string :slug
+      t.string :url
       t.text :description
       t.timestamps
     end
