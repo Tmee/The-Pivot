@@ -4,6 +4,7 @@ class Seed
     generate_users
     generate_businesses
     generate_100_users
+    puts "💥  Database has been succefully seeded 💥"
   end
 
 
@@ -32,7 +33,7 @@ class Seed
                   user_name: "josh",
                   admin: true)
 
-    puts "⏩  Users and Site-Admins have been generated.  ⬅⬅⬅⬅"
+    puts "⏩  Users and Site-Admins have been generated."
   end
 
   def generate_businesses
@@ -136,7 +137,7 @@ class Seed
                     description: "Not just a band, that has been done before. It is more like an international music corporation."
     )
 
-    puts "⏩  Businesses have been generated.  ⬅⬅⬅⬅"
+    puts "⏩  Businesses have been generated."
   end
 
   def generate_100_users
@@ -150,7 +151,7 @@ class Seed
                     password: "password",
                     password_confirmation: "password")
     end
-    puts "⏩  100 random users have been created!  ⬅⬅⬅⬅"
+    puts "⏩  100 random users have been created!"
   end
 end
 
