@@ -2,16 +2,17 @@
     <div id="box">
       Business Registration
       <% @business="zach" %>
-      <%= form_for @business do |f| %>
-      <%= f.text_field :business_name, placeholder: 'Business Name', size: "60x60" %></br></br>
+      <%= form_for Business.new do |f| %>
+      <%= f.text_field :name, placeholder: 'Business Name', size: "60x60" %></br></br>
       <%= f.text_field :address, placeholder: 'Address', size: "20x30" %></br></br>
       <%= f.text_field :state, placeholder: 'State', size: "20x30" %></br></br>
-      <%= f.text_field :discription, placeholder: 'Discription', size: "20x30" %></br></br>
-      <%= f.text_field :fullname, placeholder: 'Full Name', size: "60x60" %></br></br>
-      <%= f.text_field :username, placeholder: 'Username', size: "20x30" %></br></br>
+      <%= f.text_field :description, placeholder: 'Discription', size: "20x30" %></br></br>
+      <%= f.number_field :phone, placeholder: 'Phone Number', size: "60x60" %></br></br>
+      <%= f.number_field :url, placeholder: 'Website', size: "60x60" %></br></br>
       <%= f.text_field :email, placeholder: 'Email', size: "20x30" %></br></br>
-      <%= f.password_field   :password, placeholder: 'Password', size: "20x30" %></br></br>
-      <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "20x30" %></br></br>
+
+        <button type="submit">Submit</button>
+
       <% end %>
     </div>
   </div>
