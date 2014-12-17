@@ -41,8 +41,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/menu' => 'home#menu'
-  get '/menu/:id' => 'home#yum'
+
   get '/contact' => 'home#contact'
   get '/about' => 'home#about'
 
@@ -58,7 +57,9 @@ Rails.application.routes.draw do
   delete '/cart' => 'cart#destroy'
   post '/menu_items/:id/add_to_cart' => 'cart#update'
 
+  resources :businesses, only: [:index, :show, :create, :update]
   resources :orders, only: [:index, :show, :create, :update]
+
   get '/checkout' => 'orders#new'
   get '/my_orders' => 'orders#my_orders'
 
