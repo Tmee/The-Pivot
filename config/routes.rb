@@ -27,9 +27,7 @@ Rails.application.routes.draw do
   end
 
 
-
-
-  # resources :business, path: '', param: :slug
+  resources :businesses, path: '', param: :slug
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,8 +39,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/menu' => 'home#menu'
-  get '/menu/:id' => 'home#yum'
+
   get '/contact' => 'home#contact'
   get '/about' => 'home#about'
 
@@ -59,9 +56,11 @@ Rails.application.routes.draw do
   post '/menu_items/:id/add_to_cart' => 'cart#update'
 
   resources :orders, only: [:index, :show, :create, :update]
+
   get '/checkout' => 'orders#new'
   get '/my_orders' => 'orders#my_orders'
 
+  # resources :businesses
   resources :users
   scope module: :admin do
     resources :categories
