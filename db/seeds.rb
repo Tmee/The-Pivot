@@ -3,6 +3,7 @@ class Seed
   def initialize
     generate_users
     generate_businesses
+    generate_100_users
   end
 
 
@@ -10,7 +11,7 @@ class Seed
     User.create!(full_name: "Rachel Warbelow",
                   email: "demo+rachel@jumpstartlab.com",
                   password: "password",
-                  password_confirmation: "password",)
+                  password_confirmation: "password")
 
     User.create!(full_name: "Jeff",
                   email: "demo+jeff@jumpstartlab.com",
@@ -21,7 +22,8 @@ class Seed
                   email: "demo+jorge@jumpstartlab.com",
                   password: "password",
                   password_confirmation: "password",
-                  user_name: "novohispano")
+                  user_name: "novohispano",
+                  admin: true)
 
     User.create!(full_name: "Josh Cheek",
                   email: "demo+josh@jumpstartlab.com",
@@ -30,113 +32,126 @@ class Seed
                   user_name: "josh",
                   admin: true)
 
-    puts "Users have been generated."
+    puts "⏩  Users and roles have been generated.  ⬅⬅⬅⬅"
   end
 
   def generate_businesses
-    Business.create!(name: "Apple",
-                    address: "123 Blake St.",
+    Business.create!(name: "Turing",
+                    address: "1500 Blake St.",
                     state: "CO",
                     phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
+                    email: "employment@turing.io",
+                    slug: "turing",
+                    url: "www.turing.io",
+                    description: "Turn humans into developers in 7 months."
     )
 
-    Business.create!(name: "Winos",
-                    address: "444 Blake St.",
+    Business.create!(name: "The Booze Palace",
+                    address: "444 Window St.",
                     state: "MN",
                     phone: "444-321-5858",
-                    email: "drinkallday@drunk.com",
-                    slug: "wine-and-dine",
-                    url: "www.wine-and-dine.com",
-                    description: "It may not taste good, but it gets the job done."
+                    email: "employment@theboozepalace.com",
+                    slug: "the-booze-palace",
+                    url: "www.theboozepalace.com",
+                    description: "Everything you need to get drunk"
     )
 
     Business.create!(name: "Beef and Beer",
                     address: "1431 Main St.",
                     state: "AL",
                     phone: "982-9090-9865",
-                    email: "America@numberone.com",
+                    email: "employment@beefandbeer.com",
                     slug: "beef-and-beer",
-                    url: "www.beef-and-beer.com",
-                    description: "What the hell is a vegetable?"
+                    url: "www.beefandbeer.com",
+                    description: "Meats, for everyone!"
     )
 
-    Business.create!(name: "Big Game Protection, LLC",
+    Business.create!(name: "Big Game Supply",
                     address: "1 Blake St.",
-                    state: "CO",
+                    state: "ME",
                     phone: "802-123-5858",
-                    email: "largecaliber@biggamepprotection.com",
-                    slug: "big-game-protection",
-                    url: "www.biggamepprotection.com",
-                    description: "Does the house you live in have a room dedicated to wild or domesticated game?  Are you constantly unable to go more than a day without shooting something?  Come help us target some of the world's most elusive animals."
+                    email: "employment@biggamesupply.com",
+                    slug: "big-game-supply",
+                    url: "www.biggamepsupply.com",
+                    description: "Are you constantly unable to go more than a day without shooting something?  Get all the gear you need from us!"
     )
 
-    Business.create!(name: "Apple",
+    Business.create!(name: "Not A Normal Pet",
+                    address: "7511 Bone St.",
+                    state: "ME",
+                    phone: "802-908-5823",
+                    email: "employment@nonormalpets.com",
+                    slug: "no-normal-pets",
+                    url: "www.nonormalpets.com",
+                    description: "A pet shop dedicated to the animals that are seem as 'dangerous' or 'untamable'."
+    )
+
+    Business.create!(name: "webShop",
                     address: "123 Blake St.",
                     state: "CO",
-                    phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
+                    phone: "378-475-2457",
+                    email: "employment@webShop.com",
+                    slug: "web-shop",
+                    url: "www.webShop.com",
+                    description: "The new coolest thing out there is us.  Trust, me."
     )
 
-    Business.create!(name: "Apple",
-                    address: "123 Blake St.",
+    Business.create!(name: "Mile High Air",
+                    address: "100 Dercum Square",
                     state: "CO",
                     phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
+                    email: "employment@milehighair.com",
+                    slug: "mile-high-air",
+                    url: "www.milehighair.com",
+                    description: "Ever wanted to go to space?  We have a rocket, let us take you there!"
     )
 
-    Business.create!(name: "Apple",
-                    address: "123 Blake St.",
+    Business.create!(name: "Denver Hospital",
+                    address: "8111 Lowry Boulevard",
                     state: "CO",
-                    phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
+                    phone: "802-345-7758",
+                    email: "employment@denverhospital.com",
+                    slug: "denver-hospital",
+                    url: "www.denverhospital.com",
+                    description: "The best in Denver."
     )
 
-    Business.create!(name: "Apple",
-                    address: "123 Blake St.",
-                    state: "CO",
-                    phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
+    Business.create!(name: "Stark Enterprises",
+                    address: "1311 Abbot Kinney",
+                    state: "CA",
+                    phone: "432-215-5644",
+                    email: "employment@stark.com",
+                    slug: "stark",
+                    url: "www.stark.com",
+                    description: "Gagets, energy, power, iron."
     )
 
-    Business.create!(name: "Apple",
-                    address: "123 Blake St.",
-                    state: "CO",
-                    phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
+    Business.create!(name: "Prestige Worldwide",
+                    address: "9200 West Sunset Blvd",
+                    state: "CA",
+                    phone: "141-224-9823",
+                    email: "employment@prestigeworldwide.com",
+                    slug: "prestige-worldwide",
+                    url: "www.prestigeworldwide.com",
+                    description: "Not just a band, that has been done before. It is more like an international music corporation."
     )
 
-    Business.create!(name: "Apple",
-                    address: "123 Blake St.",
-                    state: "CO",
-                    phone: "802-123-5858",
-                    email: "applesrcool@apple.com",
-                    slug: "apple",
-                    url: "www.apple.com",
-                    description: "We make some really popular and expensive shit."
-    )
-
-    puts "Businesses have been generated."
+    puts "⏩  Businesses have been generated.  ⬅⬅⬅⬅"
   end
 
+  def generate_100_users
+    100.times do
+      first_name = %W(Tom Kim Konr Zach John Pat Joan Josh Jeff Cat Jorge Fred Sam Shawna Kelly Shelly)
+      last_name  = %W(Williams Mee Larson Ruthier Casimir Téllez)
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+                    email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+                    password: "password",
+                    password_confirmation: "password")
+    end
+    puts "⏩  100 random users have been created!  ⬅⬅⬅⬅"
+  end
 
 end
 
