@@ -32,7 +32,7 @@ class Seed
                   user_name: "josh",
                   admin: true)
 
-    puts "⏩  Users and roles have been generated.  ⬅⬅⬅⬅"
+    puts "⏩  Users and Site-Admins have been generated.  ⬅⬅⬅⬅"
   end
 
   def generate_businesses
@@ -80,9 +80,9 @@ class Seed
                     address: "7511 Bone St.",
                     state: "ME",
                     phone: "802-908-5823",
-                    email: "employment@nonormalpets.com",
-                    slug: "no-normal-pets",
-                    url: "www.nonormalpets.com",
+                    email: "employment@notnormalpets.com",
+                    slug: "not-normal-pets",
+                    url: "www.notnormalpets.com",
                     description: "A pet shop dedicated to the animals that are seem as 'dangerous' or 'untamable'."
     )
 
