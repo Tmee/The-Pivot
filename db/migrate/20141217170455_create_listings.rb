@@ -1,6 +1,6 @@
 class CreateListings < ActiveRecord::Migration
   def change
-     create_table :listings do |t|
+    create_table :listings do |t|
       t.integer :business_id
       t.integer :wage
       t.integer :hours
