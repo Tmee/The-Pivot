@@ -152,7 +152,6 @@ class Seed
     end
     puts "⏩  100 random users have been created!  ⬅⬅⬅⬅"
   end
-
 end
 
 Seed.new
