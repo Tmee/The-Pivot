@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 
-  def idex
+  def index
     @listing = Listing.all
   end
 
