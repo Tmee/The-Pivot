@@ -83,7 +83,7 @@ class Seed
                     email: "employment@notnormalpets.com",
                     slug: "not-normal-pets",
                     url: "www.notnormalpets.com",
-                    description: "A pet shop dedicated to the animals that are seem as 'dangerous' or 'untamable'."
+                    description: "A pet shop dedicated to animals that seem more 'dangerous' or 'not quiet pet material' to most people."
     )
 
     Business.create!(name: "webShop",
