@@ -1,0 +1,10 @@
+
+<%= @business.each do |b|%>
+<h2><%=b.name%></h2>
+<h4><%=b.address%>, <%=b.state%></h4>
+
+<h5><%=b.phone%></h5>
+<h5><%=b.email%></h5>
+<h5><%=b.url%></h5>
+
+<% end %>
