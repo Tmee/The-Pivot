@@ -1,7 +1,7 @@
 class JobListingsController < ApplicationController
 
   def show
-    render text: 'hi'
+    render text: "balls"
   end
 
 end
