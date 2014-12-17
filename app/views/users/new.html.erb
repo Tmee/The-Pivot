@@ -8,6 +8,7 @@
 <div id="container">
   <div id="statement_left">
     <div id="box">
+      User Registration
       <% @user="zach" %>
       <%= form_for @user do |f| %>
       <%= f.text_field :fullname, placeholder: 'Full Name', size: "60x60" %></br></br>
@@ -24,6 +25,7 @@
   </div>
   <div id="list_right">
     <div id="box">
+      Business Registration
       <% @business="zach" %>
       <%= form_for @business do |f| %>
       <%= f.text_field :business_name, placeholder: 'Business Name', size: "60x60" %></br></br>
@@ -40,5 +42,3 @@
 </div>
 <button id="jobs_button" type="button" onclick="alert('HAHAHA GOTCHA!')"><h1>Register
   NOW!</h1></button>
-
-
