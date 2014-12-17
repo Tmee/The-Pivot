@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
   has_many :users
+  has_many :listings
 
   validates :name, presence: true
   validates :address, presence: true

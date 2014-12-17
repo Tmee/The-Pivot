@@ -11,7 +11,7 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @business = Business.new(user_params)
+    @business = Business.new(business_params)
 
     if @business.save
       session[:email] = @business.id
@@ -29,7 +29,7 @@ class BusinessesController < ApplicationController
 
 private
 
-  def user_params
-    params.require(:user).permit(:name, :adress, :user_name, :password, :password_confirmation)
+  def business_params
+    params.require(:business).permit(:name, :address, :state, :phone, :email, :slug, :url, :description)
   end
 end
