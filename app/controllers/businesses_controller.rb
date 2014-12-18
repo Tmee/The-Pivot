@@ -24,8 +24,7 @@
     if @business.save
       session[:email] = @business.id
       flash[:notice] = "Business created"
-      redirect_to home_path subdomain: @business.slug
-      # binding.pry
+      redirect_to home_url subdomain: @business.slug
     else
       flash[:notice] = "Business could not be created"
       @errors = @user.errors.map do |attribute, msg|
