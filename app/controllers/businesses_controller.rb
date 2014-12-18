@@ -7,7 +7,7 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find(:slug)
+    @business = current_business
   end
 
   def new

@@ -4,7 +4,7 @@ class JobListingsController < ApplicationController
   end
 
   def show
-    render text: "balls"
+    @jobs = current_business.
   end
 
 end

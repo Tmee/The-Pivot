@@ -92,7 +92,7 @@ class Seed
                     state: "CO",
                     phone: "378-475-2457",
                     email: "employment@webShop.com",
-                    slug: "web-shop",
+                    slug: "webshop",
                     url: "www.webShop.com",
                     description: "The new coolest thing out there is us.  Trust, me."
     )
@@ -122,7 +122,7 @@ class Seed
                     state: "CA",
                     phone: "432-215-5644",
                     email: "employment@stark.com",
-                    slug: "stark",
+                    slug: "stark-enterprises",
                     url: "www.stark.com",
                     description: "Gagets, energy, power, iron."
     )
