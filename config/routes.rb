@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   # resources :businesses, path: '', param: :slug
   # resources :orders, only: [:index, :show, :create, :update]
   resources :users
+  resources :listings
   resources :businesses, only: [:index, :new, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
