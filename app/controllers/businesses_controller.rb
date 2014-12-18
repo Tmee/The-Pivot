@@ -1,9 +1,13 @@
 class BusinessesController < ApplicationController
-  before_action :current_business, only: [:show]
+  # before_action :current_business, only: [:show]
   # before_action :require_admin, only: [:index]
 
   def index
     @business = Business.all
+  end
+
+  def show
+    @business = Business.find(:slug)
   end
 
   def new
