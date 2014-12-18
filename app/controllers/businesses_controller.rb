@@ -10,6 +10,10 @@
     @business = current_business
   end
 
+  def home
+    @business = current_business
+  end
+
   def new
     @business = Business.new
   end
