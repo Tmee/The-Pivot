@@ -1,0 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$brand-primary: #FF6699;
+
+.btn-primary { background-color: $brand-primary; }
