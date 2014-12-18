@@ -1,6 +1,10 @@
 class BusinessesController < ApplicationController
   # before_action :require_admin, only: [:index]
 
+  def index
+    @business = Business.all
+  end
+  
   def show
     @business = Business.find_by slug: request.subdomain
   end
