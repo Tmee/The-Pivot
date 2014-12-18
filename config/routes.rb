@@ -4,11 +4,11 @@ class Subdomain
   end
 end
 
-class SystemAdminConstraint
-  def self.matches?(request)
-    request.query_parameters["admin"] == true
-  end
-end
+# class SystemAdminConstraint
+#   def self.matches?(request)
+#     request.query_parameters["admin"] == true
+#   end
+# end
 
 # class RootDomain
 #   @subdomains = ["www"]
