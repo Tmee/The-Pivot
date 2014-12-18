@@ -4,6 +4,7 @@ class Seed
     generate_users
     generate_businesses
     generate_100_users
+    generate_listings
     puts "💥  Database has been succefully seeded 💥"
   end
 
@@ -34,6 +35,37 @@ class Seed
                   admin: true)
 
     puts "⏩  Users and Site-Admins have been generated."
+  end
+
+
+  def generate_listings
+    Listing.create!(business_id: '1',
+                    wage: 40000,
+                    hours: 40,
+                    number_of_positions: 1,
+                    title: 'Professional Pooper',
+                    end_date: '12/12/16',
+                    description: 'Do some FUCKING WORK!!!!'
+                    )
+    Listing.create!(business_id: '1',
+                    wage: 400,
+                    hours: 40,
+                    number_of_positions: 1,
+                    title: 'cleaner',
+                    end_date: '12/12/16',
+                    description: 'Do some FUCKING WORK!!!!'
+                    )
+
+    Listing.create!(business_id: '1',
+                    wage: 400,
+                    hours: 40,
+                    number_of_positions: 1,
+                    title: 'Developer',
+                    end_date: '12/12/16',
+                    description: 'Do some FUCKING WORK!!!!'
+                    )
+
+     puts "⏩  Listings have been generated."
   end
 
   def generate_businesses
