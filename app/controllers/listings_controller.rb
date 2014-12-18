@@ -1,7 +1,10 @@
 class ListingsController < ApplicationController
 
   def index
-    @listing = Listing.all
+    @listings = current_business.listings
+  end
+
+  def show
   end
 
   def new

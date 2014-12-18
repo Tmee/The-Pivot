@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # business-name.lvh.me
   constraints(Subdomain) do
     resources :business
-    resources :job_listings
+    resources :listings
     get '/' => "businesses#show"
   end
 
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index'
   root 'home#index'
 
-  get '/code' => redirect('https://github.com/chandracarney/dinner-dash')
+  get '/code' => redirect('https://github.com/Tmee/The-Pivot')
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -57,5 +57,3 @@ Rails.application.routes.draw do
     resources :menu_items
   end
 end
-
-

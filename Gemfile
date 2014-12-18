@@ -14,7 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'aws'
 gem 'fog'
-gem 'simplecov'
+gem 'faker'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
