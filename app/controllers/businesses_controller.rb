@@ -7,6 +7,10 @@ class BusinessesController < ApplicationController
   
   def show
     @business = Business.find_by slug: request.subdomain
+
+    # business_name  = Business.find_by slug: request.subdomain
+    # business_id    = business_name.id
+    # @business      = Business.find(business_id)
   end
 
   def new
