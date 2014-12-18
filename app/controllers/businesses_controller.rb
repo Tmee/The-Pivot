@@ -1,9 +1,9 @@
 class BusinessesController < ApplicationController
-  before_action :current_business, only: [:show]
   # before_action :require_admin, only: [:index]
 
-  def index
-    @business = Business.all
+  def show
+    @business = Business.find_by slug: request.subdomain
+    # binding.pry
   end
 
   def new
@@ -28,6 +28,10 @@ class BusinessesController < ApplicationController
 
 
 private
+
+  def find_the_slug
+
+  end
 
   def business_params
     params.require(:business).permit(:name, :address, :state, :phone, :email, :slug, :url, :description)

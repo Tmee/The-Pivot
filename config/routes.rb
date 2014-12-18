@@ -4,6 +4,12 @@ class Subdomain
   end
 end
 
+class SystemAdminConstraint
+  def self.matches?(request)
+    request.query_parameters["admin"] == true
+  end
+end
+
 # class RootDomain
 #   @subdomains = ["www"]
 
@@ -16,10 +22,12 @@ Rails.application.routes.draw do
 
   # business-name.lvh.me
   constraints(Subdomain) do
-    resources :business
+    resources :businesses
     resources :job_listings
     get '/' => "businesses#show"
   end
+
+  # get 'admin/*', constraints: SystemAdminConstraint
 
   # resources :businesses, path: '', param: :slug
   # resources :orders, only: [:index, :show, :create, :update]
@@ -38,7 +46,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index'
   root 'home#index'
 
-  get '/code' => redirect('https://github.com/chandracarney/dinner-dash')
+  get '/code' => redirect('https://github.com/Tmee/The-Pivot  ')
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
