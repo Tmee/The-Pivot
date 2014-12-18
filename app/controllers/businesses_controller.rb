@@ -1,4 +1,4 @@
-class BusinessesController < ApplicationController
+  class BusinessesController < ApplicationController
   # before_action :current_business, only: [:show]
   # before_action :require_admin, only: [:index]
 

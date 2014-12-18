@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
 
   def index
-    @listings = current_business.listings
+    @listings = Listing.all
   end
 
   def show

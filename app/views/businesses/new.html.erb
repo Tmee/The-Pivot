@@ -1,7 +1,7 @@
  <div id="list_right">
     <div id="box">
       Business Registration
-      <% @business="zach" %>
+
       <%= form_for Business.new do |f| %>
       <%= f.text_field :name, placeholder: 'Business Name', size: "60x60" %></br></br>
       <%= f.text_field :address, placeholder: 'Address', size: "20x30" %></br></br>

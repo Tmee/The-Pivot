@@ -1,0 +1,16 @@
+ <div id="list_right">
+    <div id="box">
+      Job Listing Creator
+      <%= form_for Listing.new do |f| %>
+      <%= f.text_field :title, placeholder: 'Title', size: "60x60" %></br></br>
+      <%= f.text_field :description, placeholder: 'Description', size: "20x30" %></br></br>
+      <%= f.text_field :wage, placeholder: 'Wage', size: "20x30" %></br></br>
+      <%= f.text_field :hours, placeholder: 'Hours', size: "20x30" %></br></br>
+      <%= f.number_field :number_of_positions, placeholder: 'Number of Positions', size: "60x60" %></br></br>
+      <%= f.text_field :end_date, placeholder: 'End Date', size: "60x60" %></br></br>
+
+        <button type="submit">Submit</button>
+
+      <% end %>
+    </div>
+  </div>
