@@ -1,9 +1,9 @@
 <% @listings.each do |listing| %>
-<%= listing.title %><br>
-<%= listing.description %><br>
-<%= listing.wage %><br>
-<%= listing.hours %><br>
-<%= listing.number_of_positions %><br>
-<%= listing.end_date %><br>
+Title:<br><%= listing.title %><br>
+Description:<br><%= listing.description %><br>
+Wage:<br>$<%= listing.wage %><br>
+Hours per week:<br><%= listing.hours %><br>
+Number of postions open:<br><%= listing.number_of_positions %><br>
+Closing date:<br><%= listing.end_date %><br>
 <br><br>
 <% end %>

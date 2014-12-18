@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_business
-    business = Business.find_by_slug! request.subdomain
+    business = Business.find_by_slug request.subdomain
   end
 
   def require_admin

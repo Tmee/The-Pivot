@@ -37,35 +37,118 @@ class Seed
     puts "⏩  Users and Site-Admins have been generated."
   end
 
-
   def generate_listings
-    Listing.create!(business_id: '1',
-                    wage: 40000,
-                    hours: 40,
-                    number_of_positions: 1,
-                    title: 'Professional Pooper',
-                    end_date: '12/12/16',
-                    description: 'Do some FUCKING WORK!!!!'
-                    )
-    Listing.create!(business_id: '1',
-                    wage: 400,
-                    hours: 40,
-                    number_of_positions: 1,
-                    title: 'cleaner',
-                    end_date: '12/12/16',
-                    description: 'Do some FUCKING WORK!!!!'
-                    )
+    20.times do
+      Listing.create!(business_id: '1',
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60)),
+                      description: Faker::Company.catch_phrase
+                      )
+    end
 
-    Listing.create!(business_id: '1',
-                    wage: 400,
-                    hours: 40,
-                    number_of_positions: 1,
-                    title: 'Developer',
-                    end_date: '12/12/16',
-                    description: 'Do some FUCKING WORK!!!!'
-                    )
+    20.times do
+      Listing.create!(business_id: '2',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
 
-     puts "⏩  Listings have been generated."
+    20.times do
+      Listing.create!(business_id: '3',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '4',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '5',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '6',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '7',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '8',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '9',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    20.times do
+      Listing.create!(business_id: '10',
+      wage: Random.rand(1..1000000),
+      hours: Random.rand(20..60),
+      number_of_positions: Random.rand(1..10),
+      title: Faker::Name.title,
+      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+      description: Faker::Company.catch_phrase
+      )
+    end
+
+    puts "⏩  Listings have been generated."
   end
 
   def generate_businesses

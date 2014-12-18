@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index'
   root 'home#index'
 
-  get '/code' => redirect('https://github.com/chandracarney/dinner-dash')
+  get '/code' => redirect('https://github.com/Tmee/The-Pivot')
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
