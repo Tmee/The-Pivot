@@ -8,7 +8,7 @@
       <%= f.text_field :hours, placeholder: 'Hours', size: "20x30" %></br></br>
       <%= f.number_field :number_of_positions, placeholder: 'Number of Positions', size: "60x60" %></br></br>
       <%= f.text_field :end_date, placeholder: 'End Date', size: "60x60" %></br></br>
-
+       <%= f.hidden_field :business_id, :value => @business_id %>
         <button type="submit">Submit</button>
 
       <% end %>

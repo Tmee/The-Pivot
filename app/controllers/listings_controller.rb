@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
   def new
     @listing     = Listing.new
     @business_id = current_business.id
-    binding.pry
+
   end
 
   def create
