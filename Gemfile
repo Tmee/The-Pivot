@@ -15,6 +15,8 @@ gem 'paperclip'
 gem 'aws'
 gem 'fog'
 gem 'faker'
+gem "bootstrap-sass", '~> 3.3.1'
+gem "autoprefixer-rails"
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

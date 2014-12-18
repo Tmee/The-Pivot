@@ -1,14 +1,38 @@
-<header class="header">
-  <img src="/assets/job_search.jpg" alt="Job Search">
-  <div id="hmenu">
-    <ul>
-      <li><%= link_to "HOME",     root_url(subdomain: 'www') %></li>
-      <li><%= link_to "ABOUT",    "/about"    %></li>
-      <li><%= link_to "CONTACT",  "/contact"  %></li>
-      <input type="text" id="login_info" name="login" value="" placeholder="Email">
-      <input type="password" id="login_info" name="password" value="" placeholder="Password">
-      <%= link_to "Login", login_path, :method => "get" %>
-      <%= link_to "Register", new_user_path, :method => "get" %>
-    </ul>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "HOME",     root_url(subdomain: 'www') %></li>
+        <li><%= link_to "ABOUT",    "/about"    %></li>
+        <li><%= link_to "CONTACT",  "/contact"  %></li>
+
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "Login", login_path, :method => "get" %></li>
+              <li><%= link_to "Register", new_user_path, :method => "get" %></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" id="login_info" name="login" value="" placeholder="Email">
+          <input type="password" id="login_info" name="password" value="" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
   </div>
-</header>
+</nav>
