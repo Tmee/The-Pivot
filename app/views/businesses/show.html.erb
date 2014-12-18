@@ -1,10 +1,12 @@
+<%if @business == nil%>
+  <h2>Sorry, that business does not have an account with EmployMe</h2>
+  <h4>Want to Sign up?</h4>
 
-<%= @business.each do |b|%>
-<h2><%=b.name%></h2>
-<h4><%=b.address%>, <%=b.state%></h4>
+<%else%>
+  <h2><%=@business.name%></h2>
+  <h4><%=@business.address%>, <%=@business.state%></h4><br>
+  <h5><%=@business.phone%></h5>
+  <h5><%=@business.email%></h5>
+  <h5><%=@business.url%></h5>
 
-<h5><%=b.phone%></h5>
-<h5><%=b.email%></h5>
-<h5><%=b.url%></h5>
-
-<% end %>
+<%end%>
