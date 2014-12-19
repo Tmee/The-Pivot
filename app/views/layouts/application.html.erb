@@ -12,18 +12,8 @@
   <% flash.each do |name, msg| %>
     <div class="flash"><%= content_tag :div, msg, class: name %></div>
   <% end %>
-
-
-
-
-
   <%= render "/layouts/header" %>
   <%= yield %>
-  <%= render "/layouts/footer" %>
-
-  <button type="button" id="my-btn" class="btn btn-primary">asdgasdadsf</button>
-
 </body>
-
-
+  <%= render "/layouts/footer" %>
 </html>
