@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @listings = current_business.listings.all
   end
 
   def new

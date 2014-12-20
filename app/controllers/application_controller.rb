@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_business
 
   before_action :clean_cart
+  before_action :modal_new_user
 
   def clean_cart
     session[:cart] ||= {}
@@ -29,5 +30,9 @@ class ApplicationController < ActionController::Base
     unless current_user && current_user.is_admin?
       redirect_to root_path, notice: "NO SOUP FOR YOU!"
     end
+  end
+
+  def modal_new_user
+    @user = User.new
   end
 end

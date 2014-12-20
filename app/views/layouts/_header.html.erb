@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "HOME",     root_url(subdomain: 'www') %></li>
-        <li><%= link_to "ALL JOBS",    "/listings"    %></li>
+        <li><%= link_to "ALL LISTINGS",    "/listings"    %></li>
       </ul>
 
 
@@ -22,12 +22,19 @@
 
       <form class="navbar-form navbar-right" role="search">
         <% if current_user == nil %>
-        <%= link_to "Register", new_user_path, class: "btn btn-default" %>
-        <div class="form-group">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn btn-default" data-toggle="modal" data-target="#RegModal">
+          Register!
+        </button>
+        <!-- <%= link_to "Register", new_user_path, class: "btn btn-default" %> -->
+        <!-- <div class="form-group">
           <input type="text" id="login_info" name="login" value="" placeholder="Email">
           <input type="password" id="login_info" name="password" value="" placeholder="Password">
-        </div>
-        <%= link_to "Login", login_path, class: "btn btn-default" %>
+        </div> -->
+        <button type="button" class="btn btn btn-default" data-toggle="modal" data-target="#LoginModal">
+          Login!
+        </button>
+        <!-- <%= link_to "Login", login_path, class: "btn btn-default" %> -->
         <%= link_to cart_path, class: "btn btn-default" do %>
         <span class="glyphicon glyphicon-inbox"></span>
         <span>Job Basket</span>
@@ -42,12 +49,69 @@
           <% end %>
         </form>
         <a class="navbar-brand navbar-right">Welcome <%= current_user.full_name %></a>
-        <div class="media">
-          <img src="https://pbs.twimg.com/profile_images/71132632/steve_jobs_normal.jpg" alt="..." style="width:32px;height:32px">
-        </div>
         <% end %>
       </form>
     </div>
   </div>
 </nav>
-<div id="name" style="margin-top:60px"></div>
+<div id="name" style="margin-top:50px"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="RegModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">User Registration</h4>
+      </div>
+      <div class="modal-body">
+        <% if @errors %>
+        <% @errors.each do |error| %>
+        <%= content_tag :h3, error %><br>
+        <% end %>
+        <% end %>
+        <%= form_for @user do |f| %>
+        <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br></br>
+        <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br></br>
+        <%= f.text_field :email, placeholder: 'Email', size: "28x30" %></br></br>
+        <%= f.password_field   :password, placeholder: 'Password', size: "28x30" %></br></br>
+        <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br></br>
+        Upload a headshot<br>
+        <%= f.file_field :picture , placeholder: 'Picture'%></br>
+        Upload a resume<br>
+        <%= f.file_field :resume , placeholder: 'Resume'%>
+        <%= f.submit "Register!" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="LoginModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <div class="formfield">
+          <%= form_for(@user, url: '/login') do |f| %>
+          <div class="field">
+            <%= f.label :email %><br>
+            <%= f.text_field :email, placeholder: 'Email', size: "28x30" %><br>
+            <%= f.label :password %><br>
+            <%= f.password_field :password, placeholder: 'Password', size: "28x30" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Login" %>
+          </div>
+          <% end %>
+          <br>
+          <div class="note">Not a user?<br>
+            Please sign up today.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
