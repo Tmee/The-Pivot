@@ -2,6 +2,44 @@ html {
   background: #ffffff;
 }
 
+.post-content {
+  margin: 0 auto;
+  margin-top: -620px;
+  text-align:center;
+  position: relative;
+  width:40%;
+}
+
+.thumbnail {
+  margin:0 auto;
+  text-align:center;
+}
+
+.wrapper {
+  text-align:center;
+}
+
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+  color: #9d9d9d;
+}
+
+#LoginModal .modal-content {
+  width: 265px;
+  top: 50%;
+  left: 28%;
+}
+
+#RegModal .modal-content {
+  width: 310px;
+  top: 50%;
+  left: 25%;
+}
+
 img { border-radius: 25px;
       height: 300px;
       width: 100%;
@@ -68,9 +106,12 @@ div#hmenu ul a:hover{
 
 div#box {
   background-color: lightgrey;
+  opacity: .9;
   padding: 25px;
   margin: 25px;
   border-radius: 25px;
+  z-index: 100;
+  text-align: left;
 }
 
 div#statement_left {
