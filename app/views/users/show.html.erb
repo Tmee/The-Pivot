@@ -1,3 +1,21 @@
-<%= @user.full_name %>
-<%= @user.email %>
-<%= link_to "Create Business", new_business_path %>
+<div class="col-md-12 text-center">
+  <div class="jumbotron">
+    <h1>Welcome to your Dashboard <%= @user.full_name %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 portfolio-item">
+      Your email is <%= @user.email %>
+    </div>
+  </div>
+</div><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-4">
+      Here you can <%= link_to "Create Business", new_business_path %>
+    </div>
+  </div>
+</div><br><br>
