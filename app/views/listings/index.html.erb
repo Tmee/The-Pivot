@@ -1,21 +1,21 @@
 <div class="col-md-12 text-center">
-    <div class="jumbotron">
-      <h1>Job Listings</h1>
-    </div>
+  <div class="jumbotron">
+    <h1>Job Listings</h1>
+  </div>
 </div>
-      <div class="container">
-        <div class="row">
-          <% @listings.each do |listing| %>
-           <div class="col-md-4 portfolio-item">
-            <h4><%= listing.title %></h4>
-            <h6>Description:    <%= listing.description %><br>
-            Wage:    $<%= listing.wage %><br>
-            Hours per week:    <%= listing.hours %><br>
-            Number of postions open:    <%= listing.number_of_positions %><br>
-            Closing date:    <%= listing.end_date %></h6><a class="btn btn-default" href="#" role="button">Apply Now »</a><br>
-            <br><br>
-          </div>
-            <% end %>
-        </div>
+
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="col-md-4 portfolio-item">
+        <h4><%= listing.title %></h4>
+        <h6>Description:    <%= listing.description %><br>
+        Wage:    $<%= listing.wage %><br>
+        Hours per week:    <%= listing.hours %><br>
+        Number of postions open:    <%= listing.number_of_positions %><br>
+        Closing date:    <%= listing.end_date %></h6><a class="btn btn-default" href="#" role="button">Apply Now »</a><br>
+        <br><br>
       </div>
-    </div>
+    <% end %>
+  </div>
+</div>
