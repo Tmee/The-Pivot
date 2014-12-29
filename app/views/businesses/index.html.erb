@@ -1,7 +1,21 @@
-
-<% @business.each do |business| %>
-<p>Name: <%= business.name %><br>
-Description: <%= business.description %><br>
-Contact Information: <%= business.address %>, <%= business.state %><br>
-<% end %>
-
+<div class="container">
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Welcome to EmployMe</h1>
+    <h4>Where do you want to work?</h4><br/>
+  </div>
+  <%@business.each do |business|%>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check"><%=business.name%></h4>
+        </div>
+        <div class="panel-body">
+            <p><%=business.description%></p>
+            <a href="#" class="btn btn-default">Learn More</a>
+        </div>
+      </div>
+    </div>
+  <%end %>
+</div>
+</div>
