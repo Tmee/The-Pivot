@@ -1,18 +1,24 @@
- <div id="list_right">
-    <div id="box">
-      Business Registration
-
-      <%= form_for Business.new do |f| %>
-      <%= f.text_field :name, placeholder: 'Business Name', size: "60x60" %></br></br>
-      <%= f.text_field :address, placeholder: 'Address', size: "20x30" %></br></br>
-      <%= f.text_field :state, placeholder: 'State', size: "20x30" %></br></br>
-      <%= f.text_field :description, placeholder: 'Discription', size: "20x30" %></br></br>
-      <%= f.number_field :phone, placeholder: 'Phone Number', size: "60x60" %></br></br>
-      <%= f.number_field :url, placeholder: 'Website', size: "60x60" %></br></br>
-      <%= f.text_field :email, placeholder: 'Email', size: "20x30" %></br></br>
-
-        <button type="submit">Submit</button>
-
-      <% end %>
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <h1>Business Registration</h1>
     </div>
-  </div>
+      <%= form_for Business.new do |f| %>
+        <%= label_tag("Business Name:") %>
+        <%= f.text_field :name, placeholder: 'Business Name', size: "60x60" %></br></br>
+        <%= label_tag("Street Adress:") %>
+        <%= f.text_field :address, placeholder: 'Address', size: "20x30" %></br></br>
+        <%= label_tag("State:") %>
+        <%= f.text_field :state, placeholder: 'State', size: "20x30" %></br></br>
+        <%= label_tag("Description:") %>
+        <%= f.text_field :description, placeholder: 'Description', size: "20x30" %></br></br>
+        <%= label_tag("Phone Number:") %>
+        <%= f.number_field :phone, placeholder: 'Phone Number', size: "60x60" %></br></br>
+        <%= label_tag("Website URL:") %>
+        <%= f.text_field :url, placeholder: 'Website', size: "60x60" %></br></br>
+        <%= label_tag("Business Email:") %>
+        <%= f.text_field :email, placeholder: 'Email', size: "20x30" %></br></br>
+        <button type="submit">Submit</button>
+      <% end %>
+  </div><br/>
+</div>
