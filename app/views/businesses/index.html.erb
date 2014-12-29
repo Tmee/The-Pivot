@@ -12,7 +12,7 @@
         </div>
         <div class="panel-body">
             <p><%=business.description%></p>
-            <a href="#" class="btn btn-default">Learn More</a>
+            <%=link_to "Learn More >>", root_url(subdomain: business.slug) %>
         </div>
       </div>
     </div>
