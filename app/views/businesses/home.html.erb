@@ -1,8 +1,8 @@
+<div class="container">
+  <h1>Welcome, <%= @business.name %></h1><br>
+  <%= link_to "Create a New Listing",   new_listing_path %><br>
+  <%= link_to "Edit Business Details",   new_listing_path %><br>
+  Description: <%= @business.description %><br>
+  Contact Information: <%= @business.address %>, <%= @business.state %><br>
 
-<p>Welcome <%= @business.name %><br>
-Description: <%= @business.description %><br>
-Contact Information: <%= @business.address %>, <%= @business.state %><br>
-
-
-
-<%= link_to "create a listing",   new_listing_path %>
+</div>
