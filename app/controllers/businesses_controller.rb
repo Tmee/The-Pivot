@@ -8,6 +8,7 @@
 
   def show
     @business = current_business
+    @listings = current_business.listings.all
   end
 
   def home
