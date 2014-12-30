@@ -23,7 +23,7 @@
     @business = Business.new(business_params)
     @current_business = @business
     if @business.save
-      @current_user.update_attribute(:business_id, @business.id)
+      current_user.update_attribute(:business_id, @business.id)
       # raise " :::::  #{@current_user}  ::::::"
       flash[:notice] = "Business created"
       redirect_to home_url subdomain: @business.slug
