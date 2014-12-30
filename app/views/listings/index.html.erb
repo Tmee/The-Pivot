@@ -14,7 +14,7 @@
         Hours per week:    <%= listing.hours %><br>
         Number of postions open:    <%= listing.number_of_positions %><br>
         Closing date:    <%= listing.end_date %></h6>
-        <%= link_to "Add to basket", "/menu_items/#{listing.id}/add_to_cart", method: :post, class: "btn btn-default" %><br>
+        <%= link_to "Add to basket", "/listings/#{listing.id}/add_to_cart", method: :post, class: "btn btn-default" %><br>
         <br><br>
       </div>
     <% end %>

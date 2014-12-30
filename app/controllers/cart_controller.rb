@@ -5,20 +5,13 @@ class CartController < ApplicationController
   end
 
   def show
-    @items_ordered = session[:cart].map do |id, quantity|
-      menu_item = MenuItem.find(id)
-      {id: menu_item.id, name: menu_item.title, quantity: quantity, price: menu_item.price}
+    @listings = session[:cart].keys.map do |id|
+      Listing.find(id)
     end
-    @total_cost = session[:cart].map { |id, quant| MenuItem.find(id).price * quant }.reduce(0,:+)
   end
 
   def update
-    if params[:menu_item]
-      amount = params[:menu_item][:amount].to_i
-    else
-      amount = (session[:cart][params[:id]] || 0) + 1
-    end
-    session[:cart][params[:id]] = amount unless amount < 0
+    session[:cart][params[:id]] = 1
     redirect_to :back
   end
 end

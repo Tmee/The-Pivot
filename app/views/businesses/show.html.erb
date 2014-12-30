@@ -18,7 +18,7 @@
           <div class="col-md-4">
             <h3><%=listing.title%></h3>
             <p><%=listing.description%></p>
-            <p><a class="btn btn-default" href="/cart" role="button">Add to Basket »</a></p>
+            <p><%= link_to "Add to basket", "/listings/:id/add_to_cart", method: :post, class: "btn btn-default" %><br></p>
           </div>
         <%end%>
       </div>

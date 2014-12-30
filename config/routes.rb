@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   get '/cart' => 'cart#show'
   delete '/cart' => 'cart#destroy'
-  post '/menu_items/:id/add_to_cart' => 'cart#update'
+  post '/listings/:id/add_to_cart' => 'cart#update'
 
 
   get '/checkout' => 'orders#new'
