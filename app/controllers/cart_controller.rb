@@ -5,8 +5,12 @@ class CartController < ApplicationController
   end
 
   def show
-    @listings = session[:cart].keys.map do |id|
-      Listing.find(id)
+    if session[:cart] == nil
+      redirect_to :back, notice: "You must be logged in to view your job basket"
+    else
+      @listings = session[:cart].keys.map do |id|
+        Listing.find(id)
+      end
     end
   end
 
