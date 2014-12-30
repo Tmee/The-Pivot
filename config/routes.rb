@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :business, only: [:show]
     resources :listings
     get '/'     => "businesses#show"
-    get '/home' => 'businesses#home'
+    get '/admin' => 'businesses#admin'
   end
 
   # resources :businesses, path: '', param: :slug

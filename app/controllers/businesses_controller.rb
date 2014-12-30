@@ -11,7 +11,7 @@
     @listings = Listing.select { |listing| listing.business_id == current_business.id }
   end
 
-  def home
+  def admin
     authorize! :manage, current_business
   end
 
