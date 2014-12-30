@@ -18,6 +18,7 @@ gem 'faker'
 gem "bootstrap-sass", '~> 3.3.1'
 gem "autoprefixer-rails"
 gem 'cancancan', '~> 1.9'
+gem "brakeman", :require => false
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

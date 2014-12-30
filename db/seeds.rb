@@ -5,7 +5,7 @@ class Seed
     generate_businesses
     generate_100_users
     generate_listings
-    puts "💥  Database has been succefully seeded 💥"
+    puts "💥  Database has been successfully seeded 💥"
   end
 
 
