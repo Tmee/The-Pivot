@@ -9,6 +9,6 @@
  * [EmployMe][lag]
 
 
-[lag]: https://employmenow.herokuapp.com/
+[lag]: https://www.larsonkonr.com/
     
 
