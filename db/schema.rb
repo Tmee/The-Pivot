@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20141217170455) do
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
     t.string   "cart",            default: "{}"
-    t.integer  "business_id"
+    t.integer  "business_id",     default: nil
   end
 
 end
