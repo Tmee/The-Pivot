@@ -18,7 +18,8 @@ class Seed
     User.create!(full_name: "Jeff",
                   email: "demo+jeff@jumpstartlab.com",
                   password: "password",
-                  password_confirmation: "password")
+                  password_confirmation: "password",
+                  business_id: 1)
 
     User.create!(full_name: "Jorge Tellez",
                   email: "demo+jorge@jumpstartlab.com",

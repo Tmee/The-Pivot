@@ -1,14 +1,14 @@
-<%if @business == nil%>
+<%if @current_business == nil%>
   <h2>Sorry, that business does not have an account with EmployMe</h2>
   <h4>Want to Sign up?</h4>
 <% else %>
   <div class="jumbotron">
     <div class="container">
-      <h1><%=@business.name%></h1>
-      <p><%=@business.description%></p><br>
+      <h1><%=@current_business.name%></h1>
+      <p><%=@current_business.description%></p><br>
     </div>
     <div class="col-md-12 text-center">
-      <%=@business.address%>, <%=@business.state%> |  <%=@business.phone%>  |  <%=@business.url%>
+      <%=@current_business.address%>, <%=@current_business.state%> |  <%=@current_business.phone%>  | <a href='http://<%=@current_business.url%>'><%=@current_business.url%></a>
     </div>
   </div>
   <div class="container">
