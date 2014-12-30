@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url
+  end
 
   protect_from_forgery with: :null_session
 
   helper_method :current_user, :require_admin
-  helper_method :current_business
+  helper_method :current_business, :require_admin
+  helper_method :business_owner, :require_admin
 
   before_action :modal_new_user
 
@@ -14,7 +16,13 @@ class ApplicationController < ActionController::Base
   end
 
   def current_business
-    business = Business.find_by_slug request.subdomain
+    @current_business ||= Business.find_by_slug request.subdomain
+  end
+
+  def business_owner
+    if @current_user.business_id == @current_business.id
+      @business_owner = @current_user
+    end
   end
 
   def require_admin
