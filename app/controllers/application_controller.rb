@@ -7,16 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :require_admin
   helper_method :current_business
 
-  before_action :clean_cart
   before_action :modal_new_user
-
-  def clean_cart
-    session[:cart] ||= {}
-    session[:cart].delete_if { |menu_item_id, amt| !MenuItem.exists?(id: menu_item_id) || amt < 1 }
-    if current_user
-      current_user.update_attributes(cart: session[:cart].to_json)
-    end
-  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

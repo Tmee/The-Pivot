@@ -23,7 +23,6 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'simplecov'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
