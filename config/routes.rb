@@ -39,7 +39,6 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact'
   get '/about' => 'home#about'
 
-  get '/admin' => 'admin#index'
   root 'home#index'
 
   get '/code' => redirect('https://github.com/Tmee/The-Pivot')
@@ -57,9 +56,9 @@ Rails.application.routes.draw do
   get '/my_orders' => 'orders#my_orders'
 
   # get 'files/:id' => 'posts#destroy_file', :via => :delete, :as => :destroy_file
-
-  scope module: :admin do
-    resources :categories
-    resources :menu_items
+  get '/admin', to: 'admin/base_admin#index', as: :admin_index
+  namespace :admin do
+    resources :businesses, :users
   end
+
 end

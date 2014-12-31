@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                         length: { in: 2..32 }
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false }
-  validates_format_of :email, { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/, message: "must be a valid email address"}
+  # validates_format_of :email, { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/, message: "must be a valid email address"}
 
 
   def is_admin?

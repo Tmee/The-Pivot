@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1><%=@business.name%></h1>
+    <p><%=@business.description%></p><br>
+  </div>
+  <div class="col-md-12 text-center">
+    <%=@business.address%>, <%=@business.state%> |  <%=@business.phone%>  | <a href='http://<%=@business.url%>'><%=@business.url%></a>
+  </div>
+</div>
+<div class="row">
+  <div class="container">
+    <div class="large-6 columns"><%= link_to 'Edit this business', edit_admin_business_path(@business) %> | <%= link_to 'Back to Admin Home', admin_index_path %></div>
+  </div><br/>
+</div>
