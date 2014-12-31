@@ -70,21 +70,23 @@
       </div>
       <div class="modal-body">
         <% if @errors %>
-        <% @errors.each do |error| %>
-        <%= content_tag :h3, error %><br>
+          <% @errors.each do |error| %>
+          <%= content_tag :h3, error %><br>
+          <% end %>
         <% end %>
-        <% end %>
-        <%= form_for @user do |f| %>
-        <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br></br>
-        <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br></br>
-        <%= f.text_field :email, placeholder: 'Email', size: "28x30" %></br></br>
-        <%= f.password_field   :password, placeholder: 'Password', size: "28x30" %></br></br>
-        <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br></br>
-        Upload a headshot<br>
-        <%= f.file_field :picture , placeholder: 'Picture'%></br>
-        Upload a resume<br>
-        <%= f.file_field :resume , placeholder: 'Resume'%>
-        <%= f.submit "Register!" %>
+        <%unless current_user.present? %>
+          <%= form_for @user do |f| %>
+          <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br></br>
+          <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br></br>
+          <%= f.text_field :email, placeholder: 'Email', size: "28x30" %></br></br>
+          <%= f.password_field   :password, placeholder: 'Password', size: "28x30" %></br></br>
+          <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br></br>
+          Upload a headshot<br>
+          <%= f.file_field :picture , placeholder: 'Picture'%></br>
+          Upload a resume<br>
+          <%= f.file_field :resume , placeholder: 'Resume'%>
+          <%= f.submit "Register!" %>
+          <%end%>
         <% end %>
       </div>
     </div>
