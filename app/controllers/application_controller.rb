@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   helper_method :business_owner, :require_admin
   helper_method :cart
 
-  before_action :modal_new_user
+  before_action :modal_new_user, :only => [:]
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
