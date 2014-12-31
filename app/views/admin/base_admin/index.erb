@@ -8,13 +8,15 @@
     <div class="col-md-12">
       <h3>All Businesses :</h3>
     </div>
-  </div>
+  </div><br/>
   <div class="row">
     <%@businesses.each do |business|%>
       <div class="col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading text center">
-            <div class="col-md-7"><h4><%=business.name%></h4></div>
+            <div class="col-md-7">
+              <h4><%=link_to business.name, admin_business_path(business) %></h4>
+          </div>
             <div class="col-md-3 text-center"><p>Active</p>
               <td class="text-center">
                 <div class="switch text-center">

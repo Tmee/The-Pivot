@@ -4,7 +4,6 @@ class Admin::BaseAdminController < ActionController::Base
   helper_method :current_user
   layout "admin"
 
-
   def index
     @businesses = Business.order(id: :asc)
   end

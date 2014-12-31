@@ -22,7 +22,6 @@ class Admin::BusinessesController < Admin::BaseAdminController
     redirect_to admin_path, notice: "The business was deleted."
   end
 
-
   private
 
   def business_params
