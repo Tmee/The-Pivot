@@ -23,8 +23,8 @@
         <td class="text-center"><%= business.name %></td>
         <td class="text-center">
           <ul class="stack button-group">
-            <li><%= link_to 'Edit', root_path, class: "button tiny" %></li>
-            <li><%= link_to 'Destroy', root_path, class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <li><%= link_to 'Edit', edit_admin_business_path(business), class: "button tiny" %></li>
+            <li><%= link_to 'Destroy', admin_business_path(business), class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
         </td>
         <td class="text-center">
@@ -60,6 +60,4 @@
     <%end %>
   </div>
 </div>
-
-
 
