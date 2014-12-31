@@ -23,4 +23,5 @@ class User < ActiveRecord::Base
   def parsed_cart
     JSON.parse(json_cart)
   end
+
 end
