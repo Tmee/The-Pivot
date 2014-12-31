@@ -1,50 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
-      <h2>Welcome Web Administrator,</h2>
-    </div>
-    <div class="col-md-5">
-      <h5><%= @current_user.full_name %></h5>
+    <div class="col-md-10">
+      <h2>Welcome Web Administrator, <%= @current_user.full_name %></h2>
     </div>
   </div>
-
-
-<table>
-  <thead>
-    <tr>
-      <th class="text-center">Name</th>
-      <th class="text-center"></th>
-      <th class="text-center"></th>
-      <th class="text-center"></th>
-      <th class="text-center">Active Status</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @businesses.each do |business| %>
-      <tr>
-        <td class="text-center"><%= business.name %></td>
-        <td class="text-center">
-          <ul class="stack button-group">
-            <li><%= link_to 'Edit', edit_admin_business_path(business), class: "button tiny" %></li>
-            <li><%= link_to 'Destroy', admin_business_path(business), class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          </ul>
-        </td>
-        <td></td>
-        <td></td>
-        <td class="text-center">
-          <div class="switch">
-            <%= check_box_tag business.id, business.id, business.active?, onchange: "changeStatus(event)" %>
-            <label for="<%= business.id %>"></label>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-
   <div class="row">
     <div class="col-md-12">
       <h3>All Businesses :</h3>
@@ -54,11 +13,26 @@
     <%@businesses.each do |business|%>
       <div class="col-md-4">
         <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4><%=business.name%></h4>
-          </div>
-          <div class="panel-body">
-              <p><%=business.description%></p>
+          <div class="panel-heading text center">
+            <div class="col-md-7"><h4><%=business.name%></h4></div>
+            <div class="col-md-3 text-center"><p>Active</p>
+              <td class="text-center">
+                <div class="switch text-center">
+                  <%= check_box_tag business.id, business.id, business.active?, onchange: "changeStatus(event)" %>
+                  <label for="<%= business.id %>"></label>
+                </div>
+              </td>
+            </div>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <ul class="stack button-group">
+                    <li><%= link_to 'Edit', edit_admin_business_path(business), class: "button tiny" %></li>
+                    <li><%= link_to 'Destroy', admin_business_path(business), class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
           </div>
         </div>
       </div>
