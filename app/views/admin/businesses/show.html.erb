@@ -1,0 +1,13 @@
+<div class="row">
+  <br>
+  <div class="large-6 columns"><h1><%= @business.name %> <%= @business.description%></h1></div>
+  <div class="large-6 columns"><%= link_to 'Edit this business', edit_admin_business_path(@business) %> | <%= link_to 'Back to all Users', admin_user_path %></div>
+</div>
+
+<ul>
+  <li><%= @business.email%></li>
+
+  <li>business roles:</li>
+  <ul>
+
+  <ul>

@@ -160,7 +160,8 @@ class Seed
                     email: "employment@turing.io",
                     slug: "turing",
                     url: "www.turing.io",
-                    description: "Turn humans into developers in 7 months."
+                    description: "Turn humans into developers in 7 months.",
+                    active: true
     )
 
     Business.create!(name: "The Booze Palace",
@@ -170,7 +171,8 @@ class Seed
                     email: "employment@theboozepalace.com",
                     slug: "the-booze-palace",
                     url: "www.theboozepalace.com",
-                    description: "Everything you need to get drunk"
+                    description: "Everything you need to get drunk",
+                    active: true
     )
 
     Business.create!(name: "Beef and Beer",
@@ -180,7 +182,8 @@ class Seed
                     email: "employment@beefandbeer.com",
                     slug: "beef-and-beer",
                     url: "www.beefandbeer.com",
-                    description: "Meats, for everyone!"
+                    description: "Meats, for everyone!",
+                    active: true
     )
 
     Business.create!(name: "Big Game Supply",
@@ -190,7 +193,8 @@ class Seed
                     email: "employment@biggamesupply.com",
                     slug: "big-game-supply",
                     url: "www.biggamepsupply.com",
-                    description: "Are you constantly unable to go more than a day without shooting something?  Get all the gear you need from us!"
+                    description: "Are you constantly unable to go more than a day without shooting something?  Get all the gear you need from us!",
+                    active: true
     )
 
     Business.create!(name: "Not A Normal Pet",
@@ -200,7 +204,8 @@ class Seed
                     email: "employment@notnormalpets.com",
                     slug: "not-normal-pets",
                     url: "www.notnormalpets.com",
-                    description: "A pet shop dedicated to animals that seem more 'dangerous' or 'not quiet pet material' to most people."
+                    description: "A pet shop dedicated to animals that seem more 'dangerous' or 'not quiet pet material' to most people.",
+                    active: true
     )
 
     Business.create!(name: "webShop",
@@ -210,7 +215,8 @@ class Seed
                     email: "employment@webShop.com",
                     slug: "webshop",
                     url: "www.webShop.com",
-                    description: "The new coolest thing out there is us.  Trust, me."
+                    description: "The new coolest thing out there is us.  Trust, me.",
+                    active: true
     )
 
     Business.create!(name: "Mile High Air",
@@ -220,7 +226,8 @@ class Seed
                     email: "employment@milehighair.com",
                     slug: "mile-high-air",
                     url: "www.milehighair.com",
-                    description: "Ever wanted to go to space?  We have a rocket, let us take you there!"
+                    description: "Ever wanted to go to space?  We have a rocket, let us take you there!",
+                    active: true
     )
 
     Business.create!(name: "Denver Hospital",
@@ -230,7 +237,8 @@ class Seed
                     email: "employment@denverhospital.com",
                     slug: "denver-hospital",
                     url: "www.denverhospital.com",
-                    description: "The best in Denver."
+                    description: "The best in Denver.",
+                    active: true
     )
 
     Business.create!(name: "Stark Enterprises",
@@ -240,7 +248,8 @@ class Seed
                     email: "employment@stark.com",
                     slug: "stark-enterprises",
                     url: "www.stark.com",
-                    description: "Gagets, energy, power, iron."
+                    description: "Gagets, energy, power, iron.",
+                    active: true
     )
 
     Business.create!(name: "Prestige Worldwide",
@@ -250,7 +259,8 @@ class Seed
                     email: "employment@prestigeworldwide.com",
                     slug: "prestige-worldwide",
                     url: "www.prestigeworldwide.com",
-                    description: "Not just a band, that has been done before. It is more like an international music corporation."
+                    description: "Not just a band, that has been done before. It is more like an international music corporation.",
+                    active: true
     )
 
     puts "⏩  Businesses have been generated."

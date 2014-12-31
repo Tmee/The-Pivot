@@ -13,6 +13,9 @@
   <thead>
     <tr>
       <th class="text-center">Name</th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
       <th class="text-center">Active Status</th>
     </tr>
   </thead>
@@ -27,6 +30,8 @@
             <li><%= link_to 'Destroy', admin_business_path(business), class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
         </td>
+        <td></td>
+        <td></td>
         <td class="text-center">
           <div class="switch">
             <%= check_box_tag business.id, business.id, business.active?, onchange: "changeStatus(event)" %>

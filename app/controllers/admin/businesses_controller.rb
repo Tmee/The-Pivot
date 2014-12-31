@@ -7,19 +7,20 @@ class Admin::BusinessesController < Admin::BaseAdminController
 
   def update
     if @business.update_attributes(business_params)
-      respond_to do |format|
-        format.json { render json: @business.to_json }
-        format.html { redirect_to admin_business_path, notice: "You have updated the status." }
-      end
+      redirect_to admin_index_path, notice: "You have updated a product."
     else
-      flash.now[:alert] = "The business status was not updated. Please try again."
+      flash.now[:alert] = "The product was not updated. Please try again."
       render :edit
     end
   end
 
+  def show
+  end
+
+
   def destroy
-      @business.destroy
-      redirect_to admin_path, notice: "The business was deleted."
+    @business.destroy
+    redirect_to admin_path, notice: "The business was deleted."
   end
 
 

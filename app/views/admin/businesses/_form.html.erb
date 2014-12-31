@@ -1,0 +1,16 @@
+<div class="adminnav"><%= link_to "Back to Admin", admin_path %></div>
+
+<div class="formfield">
+<%= form_for([:admin, @business]) do |form| %>
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name, size: 50 %><br>
+    <%= form.label :description %><br>
+    <%= form.text_field :description, size: 50 %><br>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
