@@ -74,7 +74,7 @@
           <%= content_tag :h3, error %><br>
           <% end %>
         <% end %>
-        <%unless current_user.prsent? %>
+        <%unless current_user.present? %>
           <%= form_for @user do |f| %>
           <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br></br>
           <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br></br>
