@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :require_admin
   helper_method :current_business, :require_admin
   helper_method :business_owner, :require_admin
+  helper_method :cart
 
   before_action :modal_new_user
 
@@ -33,5 +34,9 @@ class ApplicationController < ActionController::Base
 
   def modal_new_user
     @user = User.new
+  end
+
+  def cart
+    session[:cart] ||= {}
   end
 end

@@ -44,17 +44,19 @@ Rails.application.routes.draw do
 
   get '/code' => redirect('https://github.com/Tmee/The-Pivot')
 
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new',  :as => :login
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
   get '/cart' => 'cart#show'
   delete '/cart' => 'cart#destroy'
-  post '/listings/:id/add_to_cart' => 'cart#update'
+  post '/listings/:id/add_to_cart' => 'cart#update', :as => :add_listing
 
 
   get '/checkout' => 'orders#new'
   get '/my_orders' => 'orders#my_orders'
+
+  # get 'files/:id' => 'posts#destroy_file', :via => :delete, :as => :destroy_file
 
   scope module: :admin do
     resources :categories

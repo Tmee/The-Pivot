@@ -6,6 +6,7 @@
 </div>
 
 <div class="container">
+  <% if session[:cart] %>
 
 <div class="container">
   <h3>YOUR CART CURRENTLY CONTAINS:</h3>
@@ -14,6 +15,11 @@
     <strong><%= listing %></strong><br>
     </p>
     <% end %>
+  <% end %>
+  <% else %>
+
+  There are no items in the cart
+
   <% end %>
 </div>
 
