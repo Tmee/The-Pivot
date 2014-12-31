@@ -17,7 +17,6 @@ class Admin::BusinessesController < Admin::BaseAdminController
   def show
   end
 
-
   def destroy
     @business.destroy
     redirect_to admin_path, notice: "The business was deleted."
