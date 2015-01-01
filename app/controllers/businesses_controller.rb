@@ -1,6 +1,8 @@
 class BusinessesController < ApplicationController
-  before_action :current_business, only: [:show]
-  # before_action :require_admin, only: [:index]
+  before_action :current_business, only: [:show, :admin, :update]
+  # before_action :require_business_admin, only: [:admin]
+  load_and_authorize_resource
+
 
   def index
     @business = Business.all
@@ -11,7 +13,6 @@ class BusinessesController < ApplicationController
   end
 
   def admin
-    authorize! :manage, current_business
   end
 
   def new

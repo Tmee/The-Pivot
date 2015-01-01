@@ -5,8 +5,11 @@ class Ability
     user ||= User.new
     can :manage, :all if user.admin?
 
-    can :create, Business
-    can :manage, Business, :id => user.business_id
+    alias_action :update, :to => :admn
+    alias_action :create, :show, :index, :to => :usr
+    can :admn, Business, :id => user.business_id
+    can :usr,  Business
+
     can :admin, Business, :id => user.business_id
 
     can :manage, Listing, :active => true, :business_id => user.business_id

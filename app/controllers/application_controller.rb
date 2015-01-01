@@ -34,6 +34,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_business_admin
+    unless current_user && @current_user.business_id == @current_business.id?
+      redirect_to root_path, notice: "Not allowed there"
+    end
+  end
+
   def modal_new_user
     @user = User.new
   end
