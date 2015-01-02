@@ -1,9 +1,8 @@
 class BusinessesController < ApplicationController
   before_action :current_business, only: [:show, :admin, :update]
-  # before_action :require_business_admin, only: [:admin]
 
   def index
-    @business = Business.all
+    @business = Business.where :active => true
   end
 
   def show
@@ -23,9 +22,8 @@ class BusinessesController < ApplicationController
     @current_business = @business
     if @business.save
       current_user.update_attribute(:business_id, @business.id)
-      # raise " :::::  #{@current_user}  ::::::"
       flash[:notice] = "Business created"
-      redirect_to home_url subdomain: @business.slug
+      redirect_to root_url subdomain: @business.slug
     else
       flash[:notice] = "Business could not be created"
       @errors = @user.errors.map do |attribute, msg|
