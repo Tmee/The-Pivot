@@ -1,8 +1,6 @@
 class BusinessesController < ApplicationController
   before_action :current_business, only: [:show, :admin, :update]
   # before_action :require_business_admin, only: [:admin]
-  load_and_authorize_resource
-
 
   def index
     @business = Business.all
@@ -13,6 +11,7 @@ class BusinessesController < ApplicationController
   end
 
   def admin
+    authorize! :admin, current_business
   end
 
   def new
@@ -37,9 +36,9 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    @business = Business.find(params[:id])
-    @business.update(business_params)
-    redirect_to business_path(@business)
+    authorize! :update, current_business
+    current_business.update(business_params)
+    redirect_to business_path(current_business)
   end
 
 
