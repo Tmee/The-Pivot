@@ -5,7 +5,7 @@ class Admin::BusinessesController < Admin::BaseAdminController
     @businesses = Business.order(id: :asc)
   end
 
-  def updatex
+  def update
     if @business.update_attributes(business_params)
       respond_to do |format|
         format.json { render json: @business.to_json }
