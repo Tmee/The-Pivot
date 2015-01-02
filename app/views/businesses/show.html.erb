@@ -2,7 +2,7 @@
     <div class="container">
 <%if @current_business == nil%>
     <h2>Sorry, that business does not have an account with EmployMe</h2>
-    <h4>Want to =link_to "Sign Up?", new_user_path</h4>
+    <h4>Want to <button type="button" class="btn btn btn-default" data-toggle="modal" data-target="#RegModal">Sign Up</button> and create a page for them?</h4>
   </div><br/><br/>
 <% elsif @current_business.active == false %>
       <h2>Sorry,</h2>

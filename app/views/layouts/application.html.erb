@@ -13,6 +13,7 @@
     <div class="flash"><%= content_tag :div, msg, class: name %></div>
   <% end %>
   <%= render "/layouts/header" %>
+  <%= render partial: "shared/flash", id: "flash" %>
   <%= yield %>
 </body>
   <%= render "/layouts/footer" %>

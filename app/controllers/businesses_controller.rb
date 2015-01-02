@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  before_action :current_business, only: [:show, :admin, :update]
+  before_action :current_business, only: [:show, :admin, :update, :admin]
 
   def index
     @business = Business.where :active => true
@@ -12,7 +12,10 @@ class BusinessesController < ApplicationController
   end
 
   def admin
-    authorize! :admin, current_business
+    authorize! :admin, current_business, :alert => "You are Not Authorized to access that page"
+    unless current_business.present?
+      redirect_to root_url subdomain: "www"
+    end
   end
 
   def new
