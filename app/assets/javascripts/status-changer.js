@@ -3,6 +3,7 @@ function changeStatus(event) {
   $.ajax({
     url: "/admin/businesses/" + event.target.id,
     type: "put",
+    dataType: "json",
     data: { business: { active: value } }
   })
 }

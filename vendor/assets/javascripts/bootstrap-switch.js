@@ -18,8 +18,6 @@
  * limitations under the License.
  * ========================================================================
  */
- console.log("tits")
-
 (function() {
   var __slice = [].slice;
 

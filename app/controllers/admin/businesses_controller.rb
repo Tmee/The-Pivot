@@ -7,10 +7,13 @@ class Admin::BusinessesController < Admin::BaseAdminController
 
   def update
     if @business.update_attributes(business_params)
-      redirect_to admin_index_path, notice: "You have updated a product."
+      respond_to do |format|
+        format.json { render json: @business.to_json }
+        format.html { redirect_to admin_index_path, notice: "You have updated a Business." }
+      end
     else
-      flash.now[:alert] = "The product was not updated. Please try again."
-      render :edit
+      flash.now[:alert] = "The business was not updated. Please try again."
+      render :back
     end
   end
 
@@ -25,6 +28,6 @@ class Admin::BusinessesController < Admin::BaseAdminController
   private
 
   def business_params
-    params.require(:business).permit(:name, :address, :state, :phone, :email, :slug, :url, :description)
+    params.require(:business).permit(:name, :address, :state, :phone, :email, :slug, :url, :description, :active)
   end
 end
