@@ -20,7 +20,8 @@
             <div class="col-md-3 text-center"><p>Active</p>
               <td class="text-center">
                 <div class="switch text-center">
-                  <%= check_box_tag business.id, business.id, business.active?, onchange: "changeStatus(event)" %>
+                  <%= check_box_tag business.id, business.id, business.active?, checked: ("checked" if business.active?), onchange: "changeStatus(event)" %>
+
                   <label for="<%= business.id %>"></label>
                 </div>
               </td>
