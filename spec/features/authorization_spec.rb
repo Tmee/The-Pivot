@@ -1,4 +1,7 @@
 require 'rails_helper'
+require "cancan/matchers"
+
+
 
 describe 'Application authorizaiton' do
 
