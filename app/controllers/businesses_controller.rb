@@ -9,7 +9,11 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @listings = Listing.select { |listing| listing.business_id == current_business.id }
+    if current_business && current_business.active?
+      @listings = Listing.select { |listing| listing.business_id == current_business.id }
+    else
+      redirect_to root_url subdomain: "www"
+    end
   end
 
   def admin
