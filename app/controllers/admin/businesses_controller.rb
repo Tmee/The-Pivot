@@ -12,7 +12,7 @@ class Admin::BusinessesController < Admin::BaseAdminController
         format.html { redirect_to admin_index_path}
       end
     else
-      flash.now[:alert] = "The business was not updated. Please try again."
+      flash.now[:notice] = "The business was not updated. Please try again."
       render :back
     end
   end
@@ -22,7 +22,7 @@ class Admin::BusinessesController < Admin::BaseAdminController
 
   def destroy
     @business.destroy
-    redirect_to admin_path, notice: "The business was deleted."
+    redirect_to admin_path, alert: "The business was deleted."
   end
 
   private

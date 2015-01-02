@@ -30,7 +30,7 @@ class BusinessesController < ApplicationController
       flash[:notice] = "Business created"
       redirect_to root_url subdomain: @business.slug
     else
-      flash[:notice] = "Business could not be created"
+      flash[:error] = "Business could not be created"
       @errors = @user.errors.map do |attribute, msg|
         "#{attribute.to_s.gsub("_", " ").capitalize}: #{msg.downcase}"
       end.uniq

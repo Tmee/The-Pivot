@@ -6,23 +6,17 @@
 <%end%>
 
 <%if flash[:notice] %>
-  <div class="alert alert-warning" role="alert">
+  <div class="alert alert-success" role="alert">
     <%= flash[:notice] %>
     <a href="#" class="close">&times;</a>
   </div><br/>
 <%end%>
 
-<%if flash[:info] %>
-  <div class="alert alert-info" role="alert">
-    <%= flash[:info] %>
+<%if flash[:error] %>
+  <div class="alert alert-warning" role="alert">
+    <%= flash[:error] %>
     <a href="#" class="close">&times;</a>
   </div>
 <%end%>
 
-<%if flash[:success] %>
-  <div class="alert alert-success" role="alert">
-    <%= flash[:success] %>
-    <a href="#" class="close">&times;</a>
-  </div>
-<%end%>
 
