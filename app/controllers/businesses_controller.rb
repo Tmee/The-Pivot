@@ -1,22 +1,18 @@
 class BusinessesController < ApplicationController
-  before_action :current_business, only: [:show, :admin, :update]
-  # before_action :require_business_admin, only: [:admin]
-  load_and_authorize_resource
-
+  before_action :current_business, only: [:show]
+  # before_action :require_admin, only: [:index]
+  # load_and_authorize_resource
 
   def index
-    @business = Business.where :active => true
+    @business = Business.all
   end
 
   def show
-    if current_business && current_business.active?
-      @listings = Listing.select { |listing| listing.business_id == current_business.id }
-    else
-      redirect_to root_url subdomain: "www"
-    end
+    @listings = Listing.select { |listing| listing.business_id == current_business.id }
   end
 
   def admin
+    authorize! :manage, current_business
   end
 
   def new
@@ -30,7 +26,7 @@ class BusinessesController < ApplicationController
       current_user.update_attribute(:business_id, @business.id)
       # raise " :::::  #{@current_user}  ::::::"
       flash[:notice] = "Business created"
-      redirect_to root_url subdomain: @business.slug
+      redirect_to home_url subdomain: @business.slug
     else
       flash[:notice] = "Business could not be created"
       @errors = @user.errors.map do |attribute, msg|
