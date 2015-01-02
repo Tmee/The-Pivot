@@ -8,15 +8,15 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to user_path(current_user.id), notice: "Welcome to EmployMe, #{user.full_name}."
+      redirect_to user_path(current_user.id), notice: "Welcome Back, #{user.full_name}."
     else
-      redirect_to login_path, notice: "We could not log you in. Please try again."
+      redirect_to login_path, :notice => "We could not log you in. Please try again."
     end
   end
 
   def destroy
     session.clear
-    redirect_to root_path, notice: "You are logged out."
+    redirect_to root_path, :notice => "You are logged out."
   end
 
   private

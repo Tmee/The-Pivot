@@ -30,13 +30,13 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     unless current_user && current_user.is_admin?
-      redirect_to root_path, notice: "NO SOUP FOR YOU!"
+      redirect_to root_path, :alert => "Not Authorized"
     end
   end
 
   def require_business_admin
     unless current_user && @current_user.business_id == @current_business.id?
-      redirect_to root_path, notice: "Not allowed there"
+      redirect_to root_path, :alert => "Not Authorized"
     end
   end
 

@@ -26,7 +26,7 @@ protected
 
   def require_admin
     unless current_user && current_user.is_admin?
-      redirect_to root_path, notice: "NO SOUP FOR YOU!"
+      redirect_to root_path, :alert => "Unauthorized"
     end
   end
 end

@@ -1,9 +1,15 @@
-<%if @current_business == nil%>
-  <h2>Sorry, that business does not have an account with EmployMe</h2>
-  <h4>Want to Sign up?</h4>
-<% else %>
   <div class="jumbotron">
     <div class="container">
+<%if @current_business == nil%>
+    <h2>Sorry, that business does not have an account with EmployMe</h2>
+    <h4>Want to <button type="button" class="btn btn btn-default" data-toggle="modal" data-target="#RegModal">Sign Up</button> and create a page for them?</h4>
+  </div><br/><br/>
+<% elsif @current_business.active == false %>
+      <h2>Sorry,</h2>
+      <h2>This page is under construction.</h2>
+      <h3> Check back later!</h3>
+    </div><br/><br/>
+<% else %>
       <h1><%=@current_business.name%></h1>
       <p><%=@current_business.description%></p><br>
     </div>
