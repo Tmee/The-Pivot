@@ -6,7 +6,9 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @listings = Listing.select { |listing| listing.business_id == current_business.id && current_business.active?}
+    if current_business
+      @listings = Listing.select { |listing| listing.business_id == current_business.id && current_business.active?}
+    end
   end
 
   def admin
