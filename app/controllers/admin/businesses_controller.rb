@@ -9,7 +9,7 @@ class Admin::BusinessesController < Admin::BaseAdminController
     if @business.update_attributes(business_params)
       respond_to do |format|
         format.json { render json: @business.to_json }
-        format.html { redirect_to admin_index_path, notice: "You have updated a Business." }
+        format.html { redirect_to admin_index_path}
       end
     else
       flash.now[:alert] = "The business was not updated. Please try again."
