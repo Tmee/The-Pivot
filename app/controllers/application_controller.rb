@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to main_app.root_url, :alert => exception.message
+    redirect_to main_app.root_url
   end
 
   protect_from_forgery with: :null_session
@@ -30,13 +30,13 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     unless current_user && current_user.is_admin?
-      redirect_to root_path, alert: "Not Authorized"
+      redirect_to root_path, :alert => "Not Authorized"
     end
   end
 
   def require_business_admin
     unless current_user && @current_user.business_id == @current_business.id?
-      redirect_to root_path, alert: "Not Authorized"
+      redirect_to root_path, :alert => "Not Authorized"
     end
   end
 

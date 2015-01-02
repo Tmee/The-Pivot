@@ -22,7 +22,7 @@ class Admin::BusinessesController < Admin::BaseAdminController
 
   def destroy
     @business.destroy
-    redirect_to admin_path, alert: "The business was deleted."
+    redirect_to admin_path, :alert => "The business was deleted."
   end
 
   private
