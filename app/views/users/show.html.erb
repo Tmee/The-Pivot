@@ -20,9 +20,6 @@
       <%else%>
         <h3>Your Business :</h3>
         <h4><a href="http://<%=@business.slug%>.lvh.me:3000/admin"><%=@business.name%></a></h4>
-
-        <%= link_to @business.name, root_url(@business.slug + '.' + request.domain + "/admin") %>
-
       <%end%>
     </div>
   </div>
