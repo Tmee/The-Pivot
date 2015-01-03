@@ -55,6 +55,6 @@ Rails.application.routes.draw do
   # get 'files/:id' => 'posts#destroy_file', :via => :delete, :as => :destroy_file
   get '/admin', to: 'admin/base_admin#index', as: :admin_index
   namespace :admin do
-    resources :businesses, :users
+    resources :businesses, :users, :listings
   end
 end
