@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
       <h2>Welcome Web Administrator, <%= @current_user.full_name %></h2>
     </div>
   </div>
@@ -12,7 +12,11 @@
   <div class="row">
     <%@businesses.each do |business|%>
       <div class="col-md-4">
+        <%if business.active?%>
         <div class="panel panel-default">
+        <%else%>
+        <div class="panel panel-danger">
+        <%end%>
           <div class="panel-heading text center">
             <div class="col-md-7">
               <h4><%=link_to business.name, admin_business_path(business) %></h4>
@@ -21,7 +25,6 @@
               <td class="text-center">
                 <div class="switch text-center">
                   <%= check_box_tag business.id, business.id, business.active?, checked: ("checked" if business.active?), onchange: "changeStatus(event)" %>
-
                   <label for="<%= business.id %>"></label>
                 </div>
               </td>

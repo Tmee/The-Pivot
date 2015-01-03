@@ -15,7 +15,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 offset-4">
-      Here you can <%= link_to "Create Business", new_business_path %>
+      <%if current_user.business_id == nil%>
+        Here you can <%= link_to "Create Business", new_business_path %>
+      <%else%>
+        <h3>Your Business :</h3>
+        <h4><%= link_to "#{@business.name}", admin_path, subdomain: "#{@business.slug}" %></h4>
+      <%end%>
     </div>
   </div>
 </div><br><br>

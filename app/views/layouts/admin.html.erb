@@ -12,8 +12,9 @@
   <% flash.each do |name, msg| %>
     <div class="flash"><%= content_tag :div, msg, class: name %></div>
   <% end %>
-  <%= yield %>
+  <%= render "/layouts/admin_header" %>
   <%= render partial: "shared/flash", id: "flash" %>
+  <%= yield %>
 </body>
   <div class="container">
     <%= render "/layouts/footer" %>
