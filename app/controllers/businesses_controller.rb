@@ -13,9 +13,10 @@ class BusinessesController < ApplicationController
 
   def admin
     authorize! :admin, current_business, :alert => "You are Not Authorized to access that page"
-    unless current_business.present?
-      redirect_to root_url subdomain: "www"
-    end
+    @listings = Listing.all.select { |listing| listing.business_id == current_business.id}
+    # unless current_business.present?
+    #   redirect_to root_url subdomain: "www"
+    # end
   end
 
   def new

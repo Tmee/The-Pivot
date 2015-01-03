@@ -10,8 +10,9 @@ class Ability
     can :admn, Business, :id => user.business_id
     can :usr,  Business
 
-    can :manage, Listing, :active => true, :business_id => user.business_id
-
+    can :update, Listing, :business_id => user.business_id
+    can :edit, Listing, :business_id => user.business_id
+    can :show, Listing, :business_id => user.business_id
     alias_action :show, :update, :destroy, :to => :sud
     can :sud, User, :id => user.id
     can :create, User

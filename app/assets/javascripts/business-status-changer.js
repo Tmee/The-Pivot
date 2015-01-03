@@ -1,4 +1,4 @@
-function changeStatus(event) {
+function changeBusinessStatus(event) {
   var value = $(event.target).prop('checked')
   $.ajax({
     url: "/admin/businesses/" + event.target.id,
