@@ -13,6 +13,7 @@ end
 # end
 
 Rails.application.routes.draw do
+  root 'home#index'
 
   # business-name.lvh.me
   constraints(Subdomain) do
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     resources :listings
     get '/'     => "businesses#show"
     get '/admin' => 'businesses#admin'
+    get '/admin/edit' => 'businesses#edit'
   end
 
   # resources :businesses, path: '', param: :slug
@@ -28,10 +30,6 @@ Rails.application.routes.draw do
   resources :listings
   resources :businesses, only: [:index, :new, :create]
 
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
   # You can have the root of your site routed with "root"
   # namespace :businesses, as: :business, path: '/:slug' do
   #   resources :job_listing
@@ -39,7 +37,6 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact'
   get '/about' => 'home#about'
 
-  root 'home#index'
 
   get '/code' => redirect('https://github.com/Tmee/The-Pivot')
 
@@ -60,5 +57,4 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :businesses, :users
   end
-
 end
