@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user.business_id?
+      @business = Business.find(current_user.business_id)
+    end
   end
 
   def new
