@@ -15,7 +15,6 @@ class Admin::ListingsController < Admin::BaseAdminController
     end
   end
 
-
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy

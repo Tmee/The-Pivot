@@ -12,8 +12,9 @@ class Ability
 
     can :update, Listing, :business_id => user.business_id
     can :edit, Listing, :business_id => user.business_id
-    can :show, Listing, user
+    can :show, Listing
     can :create, Listing, :business_id => user.business_id
+    can :index, Listing
 
     alias_action :show, :update, :destroy, :to => :sud
     can :sud, User, :id => user.id
