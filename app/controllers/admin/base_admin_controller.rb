@@ -1,6 +1,6 @@
 class Admin::BaseAdminController < ActionController::Base
   protect_from_forgery with: :null_session
-  before_action :require_admin
+  before_action :require_admin, only: [:index]
   helper_method :current_user
   layout "admin"
 
@@ -26,7 +26,7 @@ protected
 
   def require_admin
     unless current_user && current_user.is_admin?
-      redirect_to root_path, :alert => "Unauthorized"
+      redirect_to root_path, :alert => "Unauthorized, this computer is now being monitered"
     end
   end
 end

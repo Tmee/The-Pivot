@@ -1,17 +1,30 @@
 class ListingsController < ApplicationController
+  load_and_authorize_resource
 
   def index
-    @listings = Listing.all
+    @listings = Listing.where :active => true
   end
 
   def show
-    @listings = current_business.listings.all
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    binding.pry
+    if @listing.update_attributes(listing_params)
+      respond_to do |format|
+        format.json { render json: @listing.to_json }
+        format.html { redirect_to listing_path}
+      end
+    else
+      flash.now[:notice] = "The business was not updated. Please try again."
+      render :back
+    end
   end
 
   def new
     @listing     = Listing.new
     @business_id = current_business.id
-
   end
 
   def create
@@ -34,6 +47,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :business_id, :wage, :hours, :number_of_postions, :end_date)
+    params.require(:listing).permit(:title, :description, :business_id, :wage, :hours, :number_of_postions, :end_date, :active)
   end
 end

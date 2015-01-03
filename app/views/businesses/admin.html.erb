@@ -1,7 +1,46 @@
 <div class="container">
   <h1>Welcome, <%= @current_business.name %></h1><br>
   <%= link_to "Create a New Listing",   new_listing_path %><br>
-  <%= link_to "Edit Business Details",   new_listing_path %><br>
+  <%= link_to "Edit Business Details",   edit_admin_business_path(@current_business) %><br>
   Description: <%= @current_business.description %><br>
   Contact Information: <%= @current_business.address %>, <%= @current_business.state %><br>
+</div>
+<div class="container">
+  <div class="row">
+    <h2>Your  Job Listings : </h2>
+      <%@listings.each do |listing|%>
+        <div class="col-md-4">
+          <%if listing.active?%>
+          <div class="panel panel-default">
+          <%else%>
+          <div class="panel panel-danger">
+          <%end%>
+            <div class="panel-heading text center">
+              <div class="col-md-7">
+                <h4><%=link_to listing.title, listing_path(listing) %></h4>
+            </div>
+              <div class="col-md-3 text-center"><p>Active</p>
+                <td class="text-center">
+                  <div class="switch text-center">
+                    <%= check_box_tag listing.id, listing.id, listing.active?, checked: ("checked" if listing.active?), onchange: "changeListingStatus(event)" %>
+                    <label for="<%= listing.id %>"></label>
+                  </div>
+                </td>
+              </div>
+              <tbody>
+                <tr>
+                  <td class="text-center">
+                    <ul class="stack button-group">
+                      <li><%= link_to 'Edit', edit_listing_path(listing), class: "button tiny" %></li>
+                      <li><%= link_to 'Destroy', admin_listing_path(listing), class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </div>
+          </div>
+        </div>
+      <%end %>
+    </div>
+  </div>
 </div>

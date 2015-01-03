@@ -15,11 +15,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 offset-4">
-      <%if current_user.business_id == nil%>
+      <%if @user.business_id == nil%>
         Here you can <%= link_to "Create Business", new_business_path %>
       <%else%>
         <h3>Your Business :</h3>
-        <h4><%= link_to "#{@business.name}", admin_path, subdomain: "#{@business.slug}" %></h4>
+        <h4><a href="http://<%=@business.slug%>.lvh.me:3000/admin"><%=@business.name%></a></h4>
       <%end%>
     </div>
   </div>

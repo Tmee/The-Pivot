@@ -1,7 +1,7 @@
 <div class="container">
     <div >
       Job Listing Creator
-      <%= form_for Listing.new do |f| %>
+      <%= form_for @listing do |f| %>
       <%= f.text_field :title, placeholder: 'Title', size: "60x60" %></br></br>
       <%= f.text_field :description, placeholder: 'Description', size: "20x30" %></br></br>
       <%= f.text_field :wage, placeholder: 'Wage', size: "20x30" %></br></br>
