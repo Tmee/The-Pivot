@@ -1,7 +1,18 @@
-
-<% @users.each do |user| %>
-<p>Name: <%= user.full_name %><br>
-Username: <%= user.user_name %><br>
-Email: <%= user.email %><br>
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+    <div class="col-md-4 portfolio-item">
+        <img src="<%= user.picture %>" media='thumbnail' alt="" style="width:150px;height:150px" />
+      <h4>Name: <%= user.full_name %></h4>
+      <h6>Username: <%= user.user_name %><br>
+        Email: <%= user.email %><br>
+        <div class="container">
+          <div class="row">
+            <a class="btn btn-primary view-pdf" href="<%= user.resume_file_name %>">View PDF</a>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 20150105164121) do
     t.boolean  "admin",           default: false
     t.string   "cart",            default: "{}"
     t.integer  "business_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
   end
 
 end
