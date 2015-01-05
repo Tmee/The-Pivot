@@ -1,5 +1,6 @@
 class BusinessesController < ApplicationController
   before_action :current_business, only: [:show, :admin, :update, :admin]
+  before_action :require_business_admin, only: [:admin]
 
   def index
     @business = Business.where :active => true
