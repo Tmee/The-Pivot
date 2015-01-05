@@ -39,6 +39,9 @@ class Seed
   end
 
   def generate_listings
+    categories = ['Health Care', 'Accounting', 'Banking', 'BioTech', 'Human Resources', 'Software Development', 'Education']
+
+
     20.times do
       Listing.create!(business_id: '1',
                       wage: Random.rand(1..1000000),
@@ -47,115 +50,125 @@ class Seed
                       title: Faker::Name.title,
                       end_date: Faker::Time.forward(Random.rand(5..60)),
                       description: Faker::Company.catch_phrase,
-                      active: true
+                      active: true,
+                      category: "#{categories.sample}"
                       )
     end
 
     20.times do
       Listing.create!(business_id: '2',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
-      )
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
+                      )
     end
 
     20.times do
       Listing.create!(business_id: '3',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
-      )
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
+                      )
     end
 
     20.times do
       Listing.create!(business_id: '4',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
     20.times do
       Listing.create!(business_id: '5',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
     20.times do
       Listing.create!(business_id: '6',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
     20.times do
       Listing.create!(business_id: '7',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
     20.times do
       Listing.create!(business_id: '8',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
     20.times do
       Listing.create!(business_id: '9',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
     20.times do
       Listing.create!(business_id: '10',
-      wage: Random.rand(1..1000000),
-      hours: Random.rand(20..60),
-      number_of_positions: Random.rand(1..10),
-      title: Faker::Name.title,
-      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase,
-      active: true
+                      wage: Random.rand(1..1000000),
+                      hours: Random.rand(20..60),
+                      number_of_positions: Random.rand(1..10),
+                      title: Faker::Name.title,
+                      end_date: Faker::Time.forward(Random.rand(5..60), :morning),
+                      description: Faker::Company.catch_phrase,
+                      active: true,
+                      category: "#{categories.sample}"
       )
     end
 
