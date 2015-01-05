@@ -45,7 +45,7 @@
           <% end %>
         <% elsif current_user.admin? %>
           <form class="navbar-form navbar-right" role="search">
-            <%= link_to "Admin Home", admin_index_path, class: "btn btn-default"%>
+            <%= link_to "Admin Home", admin_index_url(subdomain: 'www'), class: "btn btn-default"%>
             <%= link_to "Logout", logout_path, method: :delete,  class: "btn btn-default" %>
             <%= link_to cart_path, class: "btn btn-default" do %>
             <span class="glyphicon glyphicon-inbox"></span>
