@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105164121) do
+ActiveRecord::Schema.define(version: 20150105234008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150105164121) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
-    t.boolean  "active",      default: false
+    t.boolean  "active"
   end
 
   create_table "listings", force: true do |t|
@@ -61,17 +61,17 @@ ActiveRecord::Schema.define(version: 20150105164121) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",           default: false
-    t.string   "cart",            default: "{}"
+    t.boolean  "admin",                default: false
+    t.string   "cart",                 default: "{}"
     t.integer  "business_id"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
     t.string   "resume_file_name"
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 end
