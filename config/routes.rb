@@ -13,7 +13,6 @@ end
 # end
 
 Rails.application.routes.draw do
-  root 'home#index'
 
   # business-name.lvh.me
   constraints(Subdomain) do
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
     get '/admin/edit' => 'businesses#edit'
   end
 
+  root 'home#index'
   # resources :businesses, path: '', param: :slug
   # resources :orders, only: [:index, :show, :create, :update]
   resources :users
