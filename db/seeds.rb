@@ -304,7 +304,8 @@ class Seed
                     password: "password",
                     password_confirmation: "password",
                     picture: File.open("spec/fixtures/#{rand(1..15)}.jpeg"),
-                    resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf"))
+                    resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+                    )
     end
     50.times do
       first_name = %W(Tom Kim Konr Zach John PatJosh Jeff Cat Jorge Fred Sam )
@@ -317,7 +318,8 @@ class Seed
       password: "password",
       password_confirmation: "password",
       picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
-      resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf"))
+      resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+      )
     end
     puts "⏩  100 random users have been created!"
   end
