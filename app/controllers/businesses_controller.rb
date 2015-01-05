@@ -7,7 +7,7 @@ class BusinessesController < ApplicationController
 
   def show
     if current_business
-      @listings = Listing.select { |listing| listing.business_id == current_business.id && current_business.active?}
+      @listings = Listing.order(title: :asc).select { |listing| listing.business_id == current_business.id && current_business.active?}
     end
   end
 
