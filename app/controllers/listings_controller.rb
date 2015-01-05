@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @listing.update_attributes(listing_params)
       respond_to do |format|
         format.json { render json: @listing.to_json }
