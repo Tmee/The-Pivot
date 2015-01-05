@@ -46,7 +46,8 @@ class Seed
                       number_of_positions: Random.rand(1..10),
                       title: Faker::Name.title,
                       end_date: Faker::Time.forward(Random.rand(5..60)),
-                      description: Faker::Company.catch_phrase
+                      description: Faker::Company.catch_phrase,
+                      active: true
                       )
     end
 
@@ -57,7 +58,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -68,7 +70,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -79,7 +82,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -90,7 +94,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -101,7 +106,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -112,7 +118,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -123,7 +130,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -134,7 +142,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
@@ -145,7 +154,8 @@ class Seed
       number_of_positions: Random.rand(1..10),
       title: Faker::Name.title,
       end_date: Faker::Time.forward(Random.rand(5..60), :morning),
-      description: Faker::Company.catch_phrase
+      description: Faker::Company.catch_phrase,
+      active: true
       )
     end
 
