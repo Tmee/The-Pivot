@@ -2,22 +2,26 @@ class ListingsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @listings = Listing.where :active => true
+    if subdomain_present?
+      @listings = Listing.where business_id: current_business.id
+    else
+      @listings = Listing.where :active => true
+    end
   end
 
   def show
     @listing = Listing.find(params[:id])
   end
 
+
   def update
-    binding.pry
     if @listing.update_attributes(listing_params)
       respond_to do |format|
         format.json { render json: @listing.to_json }
         format.html { redirect_to listing_path}
       end
     else
-      flash.now[:notice] = "The business was not updated. Please try again."
+      flash.now[:notice] = "The listing was not updated. Please try again."
       render :back
     end
   end
@@ -48,5 +52,9 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(:title, :description, :business_id, :wage, :hours, :number_of_postions, :end_date, :active)
+  end
+
+  def subdomain_present?
+    request.subdomain.present? && request.subdomain != 'www'
   end
 end
