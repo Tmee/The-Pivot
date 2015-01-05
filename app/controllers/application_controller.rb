@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    unless current_user && current_user.is_admin?
+    unless current_user.present? && current_user.is_admin?
       redirect_to root_path, :alert => "Not Authorized"
     end
   end
