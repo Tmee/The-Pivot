@@ -24,21 +24,24 @@ describe 'user authentication', type: :feature do
     end
 
     it 'does not have a logout link' do
-      expect(page).to_not have_link('Logout')
+      expect(page).to_not have_button('Logout')
     end
   end
 
+
+
   context 'when logged in' do
     before(:each) do
-      user = FactoryGirl.create(:user)
+      user_email    = 'demo+rachel@jumpstartlab.com'
+      user_password = 'password'
       visit login_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
+      fill_in 'Email', with: user_email
+      fill_in 'Password', with: user_password
       click_button 'Login'
     end
 
     it 'logs in an existing user' do
-      expect(page).to have_content('Logout')
+      expect(page).to have_buton('Logout')
     end
 
     it 'does not have a login link' do
