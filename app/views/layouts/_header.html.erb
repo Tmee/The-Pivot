@@ -91,9 +91,10 @@
           <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br></br>
           Upload a headshot<br>
           <%= f.file_field :picture , placeholder: 'Picture'%></br>
-          Upload a resume<br>
+          Upload a resume PDF Only<br>
           <%= f.file_field :resume , placeholder: 'Resume'%>
           <%= f.submit "Register" %>
+          <%= link_to "Free converter",    "http://www.freepdfconvert.com/"    %><br>
           <%end%>
         <% end %>
       </div>
