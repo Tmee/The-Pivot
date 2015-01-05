@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'aws'
-gem 'fog'
+gem 'fog', '~> 1.23.0' 
 gem 'faker'
 gem "bootstrap-sass", '~> 3.3.1'
 gem "autoprefixer-rails"
