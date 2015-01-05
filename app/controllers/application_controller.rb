@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to main_app.root_url
+    redirect_to main_app.root_url, :alert => "Not Authorized"
   end
 
   protect_from_forgery with: :null_session
@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_business, :require_admin
   helper_method :business_owner
   helper_method :cart
+  helper_method :require_business_admin
+
 
   before_action :modal_new_user
 

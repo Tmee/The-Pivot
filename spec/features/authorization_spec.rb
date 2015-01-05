@@ -10,23 +10,23 @@ describe 'Application authorizaiton' do
       visit root_path
     end
 
-    it 'cannot access the users index page' do
+    it 'cannot access the web admin page' do
       user = FactoryGirl.create(:user)
-      visit users_path
-      expect(page).to have_content('NO SOUP FOR YOU!')
+      visit admin_index_path
+      expect(page).to have_content('Unauthorized, this computer is now being monitered')
       expect(page.current_path).to_not eq users_path
     end
 
-    it 'cannot access the categories index page' do
-      visit categories_path
-      expect(page).to have_content('NO SOUP FOR YOU!')
-      expect(page.current_path).to_not eq categories_path
+    it 'cannot access the business admin page' do
+      visit admin_url(subdomain: 'turing')
+      expect(page).to have_content('Not Authorized')
+      expect(page.current_path).to_not eq admin_path
     end
 
-    it 'cannot access the menu_items index page' do
-      visit menu_items_path
-      expect(page).to have_content('NO SOUP FOR YOU!')
-      expect(page.current_path).to_not eq menu_items_path
+    it "cannot access a user's page" do
+      visit user_path(1)
+      expect(page).to have_content('Not Authorized')
+      expect(page.current_path).to_not eq user_path
     end
   end
 
