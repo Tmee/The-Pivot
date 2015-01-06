@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106031206) do
+ActiveRecord::Schema.define(version: 20150106164102) do
 
 
   # These are extensions that must be enabled in order to support this database
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150106031206) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "business_id"
+    t.text     "letter_to_business"
   end
 
   create_table "listings", force: true do |t|

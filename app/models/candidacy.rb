@@ -1,6 +1,6 @@
 class Candidacy < ActiveRecord::Base
-  belongs_to :listings
-  belongs_to :users
-  belongs_to :businesses
+  belongs_to :listing
+  belongs_to :user
+  belongs_to :business
 
 end

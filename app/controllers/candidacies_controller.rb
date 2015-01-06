@@ -1,5 +1,4 @@
-class CandidacyController < ApplicationController
-
+class CandidaciesController < ApplicationController
 
   def new
     @candidacy = Candidacy.new
@@ -10,6 +9,8 @@ class CandidacyController < ApplicationController
     listing.business_id
     @candidacy = Candidacy.create(listing_id: params[:listing_id],
                                   user_id: current_user.id)
+    redirect_to cart_path
+    flash[:notice] = "Your application for #{listing.title} has been received and is pending."
   end
 
 end
