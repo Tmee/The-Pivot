@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :listings
     get '/'     => "businesses#show"
     get '/admin' => 'businesses#admin'
+    get '/admin/listings/:id/candidacies' => 'businesses#candidacies'
     get '/admin/edit' => 'businesses#edit'
     post '/:email' => 'users#update_business_owner'
   end
