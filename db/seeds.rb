@@ -14,7 +14,7 @@ class Seed
                   email: "demo+rachel@jumpstartlab.com",
                   password: "password",
                   password_confirmation: "password",
-                  # picture: File.open("spec/fixtures/28.jpeg")
+                  picture: File.open("spec/fixtures/28.jpeg")
                   )
 
     User.create!(full_name: "Jeff",
@@ -22,7 +22,7 @@ class Seed
                   password: "password",
                   password_confirmation: "password",
                   business_id: 1,
-                  # picture: File.open("spec/fixtures/8.jpeg")
+                  picture: File.open("spec/fixtures/8.jpeg")
                   )
 
     User.create!(full_name: "Jorge Tellez",
@@ -31,7 +31,7 @@ class Seed
                   password_confirmation: "password",
                   user_name: "novohispano",
                   admin: true,
-                  # picture: File.open("spec/fixtures/10.jpeg")
+                  picture: File.open("spec/fixtures/10.jpeg")
                   )
 
     User.create!(full_name: "Josh Cheek",
@@ -40,7 +40,7 @@ class Seed
                   password_confirmation: "password",
                   user_name: "josh",
                   admin: true,
-                  # picture: File.open("spec/fixtures/14.jpeg")
+                  picture: File.open("spec/fixtures/14.jpeg")
                   )
 
     puts "⏩  Users and Site-Admins have been generated."
@@ -307,8 +307,8 @@ class Seed
                    email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
                    password: "password",
                    password_confirmation: "password",
-                  #  picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
-                  #  resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+                   picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+                   resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
       )
     end
 
@@ -322,8 +322,8 @@ class Seed
                    email: "#{email_full_name}#{Random.rand(1..1000000)}@example.com",
                    password: "password",
                    password_confirmation: "password",
-                  #  picture: File.open("spec/fixtures/#{rand(1..15)}.jpeg"),
-                  #  resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+                   picture: File.open("spec/fixtures/#{rand(1..15)}.jpeg"),
+                   resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
       )
     end
 
