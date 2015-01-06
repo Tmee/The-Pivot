@@ -7,6 +7,7 @@ class Admin::BusinessesController < Admin::BaseAdminController
 
   def update
     if @business.update_attributes(business_params)
+      AdminBusinessMailer.update_status_email(@business).deliver
       respond_to do |format|
         format.json { render json: @business.to_json }
         format.html { redirect_to admin_index_path}
