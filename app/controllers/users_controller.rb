@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.save
+      UserMailer.created_email(@user).deliver
       session[:email] = @user.id
       flash[:notice] = "User created"
       redirect_to root_path

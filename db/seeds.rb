@@ -14,14 +14,16 @@ class Seed
                   email: "demo+rachel@jumpstartlab.com",
                   password: "password",
                   password_confirmation: "password",
-                  picture: File.open("spec/fixtures/28.jpeg"))
+                  # picture: File.open("spec/fixtures/28.jpeg")
+                  )
 
     User.create!(full_name: "Jeff",
                   email: "demo+jeff@jumpstartlab.com",
                   password: "password",
                   password_confirmation: "password",
                   business_id: 1,
-                  picture: File.open("spec/fixtures/8.jpeg"))
+                  # picture: File.open("spec/fixtures/8.jpeg")
+                  )
 
     User.create!(full_name: "Jorge Tellez",
                   email: "demo+jorge@jumpstartlab.com",
@@ -29,7 +31,8 @@ class Seed
                   password_confirmation: "password",
                   user_name: "novohispano",
                   admin: true,
-                  picture: File.open("spec/fixtures/10.jpeg"))
+                  # picture: File.open("spec/fixtures/10.jpeg")
+                  )
 
     User.create!(full_name: "Josh Cheek",
                   email: "demo+josh@jumpstartlab.com",
@@ -37,7 +40,8 @@ class Seed
                   password_confirmation: "password",
                   user_name: "josh",
                   admin: true,
-                  picture: File.open("spec/fixtures/14.jpeg"))
+                  # picture: File.open("spec/fixtures/14.jpeg")
+                  )
 
     puts "⏩  Users and Site-Admins have been generated."
   end
@@ -300,27 +304,29 @@ class Seed
       full_name = "#{first_name.sample} #{last_name.sample}"
 
       User.create!(full_name: "#{full_name}",
-                    email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
-                    password: "password",
-                    password_confirmation: "password",
-                    picture: File.open("spec/fixtures/#{rand(1..15)}.jpeg"),
-                    resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
-                    )
+                   email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+                   password: "password",
+                   password_confirmation: "password",
+                  #  picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+                  #  resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+      )
     end
+
     50.times do
-      first_name = %W(Tom Kim Konr Zach John PatJosh Jeff Cat Jorge Fred Sam )
+      first_name = %W(Tom Kim Konr Zach John Pat Josh Jeff Cat Jorge Fred Sam )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
       email_full_name = "#{first_name.sample.downcase}#{last_name.sample.downcase}"
 
       User.create!(full_name: "#{full_name}",
-      email: "#{email_full_name}#{Random.rand(1..1000000)}@example.com",
-      password: "password",
-      password_confirmation: "password",
-      picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
-      resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+                   email: "#{email_full_name}#{Random.rand(1..1000000)}@example.com",
+                   password: "password",
+                   password_confirmation: "password",
+                  #  picture: File.open("spec/fixtures/#{rand(1..15)}.jpeg"),
+                  #  resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
       )
     end
+
     puts "⏩  100 random users have been created!"
   end
 end

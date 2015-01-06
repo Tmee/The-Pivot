@@ -28,6 +28,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
     @current_business = @business
     if @business.save
+      BusinessesMailer.created_email(@business).deliver
       current_user.update_attribute(:business_id, @business.id)
       flash[:notice] = "Business created"
       redirect_to root_url subdomain: @business.slug
