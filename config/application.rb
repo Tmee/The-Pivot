@@ -15,6 +15,17 @@ Bundler.require(*Rails.groups)
 
 module DinnerDash
   class Application < Rails::Application
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.mandrillapp.com',
+      port:                 '587',
+      domain:               'employme.com',
+      user_name:            'larsonkonr@gmail.com',
+      password:             'rRSpIxUOBH45P0IKJ8SGIA',
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
