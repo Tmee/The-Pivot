@@ -3,8 +3,23 @@
   <%= link_to "Create a New Listing",   new_listing_path %><br>
   <%= link_to "Edit Business Details",   edit_admin_business_path(@current_business) %><br>
   Description: <%= @current_business.description %><br>
-  Contact Information: <%= @current_business.address %>, <%= @current_business.state %><br>
+  Contact Information: <%= @current_business.address %>, <%= @current_business.state %><br><br>
+
+  <h5>Want to add another owner to your business?</h5>
+  <div class="formfield">
+    <%= form_for @user, controller: 'users', action: 'udpate_business_owner' do |form| %>
+      <div class="field">
+        <%= form.label "Co-Owner Email" %><br>
+        <%= form.email_field :email, size: 50 %><br>
+      </div><br>
+      <div class="actions">
+        <%= form.submit('Add Co-Owner') %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
 <div class="container">
   <div class="row">
     <h2>Your  Job Listings : </h2>
