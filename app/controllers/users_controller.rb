@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:show]
+  before_action :require_business_admin, only: [:update_business_id]
   # before_action :require_admin, only: [:index]
   load_and_authorize_resource
 
@@ -31,6 +32,19 @@ class UsersController < ApplicationController
         "#{attribute.to_s.gsub("_", " ").capitalize}: #{msg.downcase}"
       end.uniq
       render :new
+    end
+  end
+
+
+  def update_business_owner
+    user = User.find_by email: params[:user][:email]
+    user.update(business_id: current_business.id)
+    if user.save
+      flash[:notice] = "Co-Owner has been added to your business"
+      redirect_to admin_url(subdomain: current_business.slug)
+    else
+      flash[:alert] = "Error, Co-Owner was not added to your business"
+      redirect_to admin_url(subdomain: current_business.slug)
     end
   end
 
