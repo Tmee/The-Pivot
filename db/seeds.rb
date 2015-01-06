@@ -44,7 +44,7 @@ class Seed
                   )
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Joan Cat)
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -59,7 +59,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Shawna Kelly )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -74,7 +74,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Shelly Viki )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -89,7 +89,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W( Kate Kim)
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -104,7 +104,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Lisa Amanda )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -119,7 +119,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Joan Amanda )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -134,7 +134,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Cat Kate )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -149,7 +149,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(Shelly Kim )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
@@ -164,7 +164,7 @@ class Seed
     end
 
     2.times do
-      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      first_name = %W(MISSY bOQUSHNA )
       last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
       full_name = "#{first_name.sample} #{last_name.sample}"
 
