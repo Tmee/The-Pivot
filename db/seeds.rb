@@ -43,6 +43,141 @@ class Seed
                   picture: File.open("spec/fixtures/14.jpeg")
                   )
 
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 2,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 3,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 4,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 5,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 6,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 7,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 8,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 9,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
+    2.times do
+      first_name = %W(Joan Cat Shawna Kelly Shelly Viki Kate Kim Lisa Amanda )
+      last_name  = %W(Williams Mee Larson Routhier Casimir Téllez Johnson Newman )
+      full_name = "#{first_name.sample} #{last_name.sample}"
+
+      User.create!(full_name: "#{full_name}",
+        email: "#{full_name}#{Random.rand(1..1000000)}@example.com",
+        password: "password",
+        password_confirmation: "password",
+        business_id: 10,
+        picture: File.open("spec/fixtures/#{rand(16..30)}.jpeg"),
+        resume: File.open("spec/fixtures/pdf/#{rand(1..8)}.pdf")
+        )
+    end
+
     puts "⏩  Users and Site-Admins have been generated."
   end
 
