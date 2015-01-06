@@ -13,11 +13,11 @@
         <%= label_tag("Description:") %>
         <%= f.text_field :description, placeholder: 'Description', size: "20x30" %></br></br>
         <%= label_tag("Phone Number:") %>
-        <%= f.number_field :phone, placeholder: 'Phone Number', size: "60x60" %></br></br>
+        <%= f.telephone_field :phone, placeholder: 'Phone Number', size: "60x60" %></br></br>
         <%= label_tag("Website URL:") %>
-        <%= f.text_field :url, placeholder: 'Website', size: "60x60" %></br></br>
+        <%= f.url_field :url, placeholder: 'Website', size: "60x60" %></br></br>
         <%= label_tag("Business Email:") %>
-        <%= f.text_field :email, placeholder: 'Email', size: "20x30" %></br></br>
+        <%= f.email_field :email, placeholder: 'Email', size: "20x30" %></br></br>
         <button type="submit">Submit</button>
       <% end %>
   </div><br/>

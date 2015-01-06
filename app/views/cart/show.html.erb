@@ -7,21 +7,27 @@
 
 <div class="container">
   <% if session[:cart] %>
-
-<div class="container">
-  <h3>YOUR CART CURRENTLY CONTAINS:</h3>
-  <% @listings.each do |listing| %>
-  <p><%= listing.title do %>
-    <strong><%= listing %></strong><br>
-    </p>
-    <% end %>
-  <% end %>
+    <div class="container">
+      <h3>YOUR JOB BASKET CURRENTLY CONTAINS:</h3>
+      <br>
+      <% @listings.each do |listing| %>
+        <p><strong>Company: </strong><%= listing.title %></p>
+        <p><strong>Job Description: </strong><%= listing.description %></p>
+        <p><strong>Wage: </strong><%= listing.wage %></p>
+        <p><strong>Hours: </strong><%= listing.hours %></p>
+        <%= form_for @candidacy do |f| %>
+          <%= hidden_field_tag(:listing_id, "#{listing.id}") %>
+          <%= f.label :letter_to_business %>
+          <%= f.text_area :letter_to_business %>
+          <%= f.submit %>
+        <% end %>
+        <br>
+      <% end %>
+    </div>
   <% else %>
-
-  There are no items in the cart
-
+    <p>There are no items in the cart</p>
   <% end %>
 </div>
 
-  <div style="clear:both;"></div>
-</div>
+<div style="clear:both;"></div>
+
