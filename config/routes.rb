@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get '/'     => "businesses#show"
     get '/admin' => 'businesses#admin'
     get '/admin/edit' => 'businesses#edit'
+    post '/:email' => 'users#update_business_owner'
   end
 
   root 'home#index'
