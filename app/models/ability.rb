@@ -6,7 +6,8 @@ class Ability
     can :manage, :all if user.admin?
 
     alias_action :update, :admin, :to => :admn
-    alias_action :create, :show, :index, :to => :usr
+    alias_action :show, :index, :to => :usr
+    can :create,  Business
     can :admn, Business, :id => user.business_id
     can :usr,  Business
 
@@ -18,6 +19,7 @@ class Ability
 
     alias_action :show, :update, :destroy, :to => :sud
     can :sud, User, :id => user.id
+    can :update_business_owner, User, :business_id => user.business_id
     can :create, User
   end
 end

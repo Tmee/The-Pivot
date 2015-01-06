@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:show]
-  before_action :require_business_admin, only: [:update_business_id]
+  before_action :require_business_admin, only: [:update_business_owner]
   # before_action :require_admin, only: [:index]
   load_and_authorize_resource
 
