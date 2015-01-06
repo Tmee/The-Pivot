@@ -17,8 +17,10 @@
       Upload a headshot<br>
       <%= f.file_field :picture , placeholder: 'Picture'%></br></br>
       Upload a resume<br>
-      <%= f.file_field :resume , placeholder: 'Resume'%>
-      <%=f.submit "Register!" %>
+      <%= f.file_field :resume , placeholder: 'Resume'%></br></br>
+      <div class="actions">
+        <%= f.submit "Register" %>
+      </div>
       <% end %>
     </div>
   </div>
