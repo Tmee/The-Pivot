@@ -1,21 +1,43 @@
+<div class="jumbotron text-center">
+  <h1>Welcome, <%= @current_business.name %> Admin</h1><br>
+</div>
 <div class="container">
-  <h1>Welcome, <%= @current_business.name %></h1><br>
-  <%= link_to "Create a New Listing",   new_listing_path %><br>
-  <%= link_to "Edit Business Details",   edit_admin_business_path(@current_business) %><br>
-  Description: <%= @current_business.description %><br>
-  Contact Information: <%= @current_business.address %>, <%= @current_business.state %><br><br>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <%= link_to "Create a New Listing",   new_listing_path, class: "btn btn btn-primary" %><br/><br/>
+    </div>
+    <div class="col-md-6 text-center">
+      <%= link_to "Edit Business Details",   edit_admin_business_path(@current_business), class: "btn btn btn-primary" %><br/><br/>
+    </div>
+  </div>
 
-  <h5>Want to add another owner to your business?</h5>
-  <div class="formfield">
-    <%= form_for @user, controller: 'users', action: 'udpate_business_owner' do |form| %>
-      <div class="field">
-        <%= form.label "Co-Owner Email" %><br>
-        <%= form.email_field :email, size: 50 %><br>
-      </div><br>
-      <div class="actions">
-        <%= form.submit('Add Co-Owner') %>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5>Want to add another owner to your business?</h5>
+        </div>
+        <div class="panel-body format-panel">
+          <div class="formfield">
+            <%= form_for @user, controller: 'users', action: 'udpate_business_owner' do |form| %>
+              <div class="field">
+                <%= form.label "Co-Owner Email" %><br>
+                <%= form.email_field :email, size: 50 %><br>
+              </div><br>
+              <div class="actions">
+                <%= form.submit('Add Co-Owner') %>
+              </div>
+            <% end %>
+          </div>
+        </div><br/>
       </div>
-    <% end %>
+    </div>
+    <div class="col-md-6 text-center">
+      <strong>Description:</strong> <%= @current_business.description %><br/>
+      <strong>Contact Information:</strong> <%= @current_business.address %>, <%= @current_business.state %><br/>
+      <strong>Phone Number:</strong> <%= @current_business.phone %><br/>
+      <strong>Website:</strong> <%= @current_business.url %><br/>
+    </div>
   </div>
 </div>
 
