@@ -15,7 +15,7 @@ class CandidaciesController < ApplicationController
                                   user_id: current_user.id,
                                   letter_to_business: params[:candidacy][:letter_to_business])
 
-
+    BusinessesMailer.candidacy_email(@candidacy).deliver
     flash[:notice] = "Your application for #{listing.title} has been received and is pending."
     redirect_to cart_path
   end
