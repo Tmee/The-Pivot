@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+  <h1>Edit User Details</h1><br>
+</div>
+
+<div class="container">
+  <%= link_to "Back to User Dashboard", user_path(current_user)%><br/><br/>
+    <div class="formfield">
+     <%= form_for @user do |f| %>
+       <%= f.label :full_name %><br>
+          <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br>
+          <%= f.label :user_name %><br>
+          <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br>
+          <%= f.label :email %><br>
+          <%= f.text_field :email, placeholder: 'Email', size: "28x30" %></br>
+          <%= f.label :password %><br>
+          <%= f.password_field   :password, placeholder: 'Password', size: "28x30" %></br>
+          <%= f.label :password_comfirmation %><br>
+          <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br>
+          <!-- Upload a headshot<br> -->
+          <%= f.label :upload_a_headshot %><br>
+          <%= f.file_field :picture , placeholder: 'Picture'%>
+          <!-- Upload a resume<br> -->
+          <%= f.label :upload_a_resume %><br>
+          <%= f.file_field :resume , placeholder: 'Resume'%><br>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div><br/>
