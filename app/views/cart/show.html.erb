@@ -27,7 +27,11 @@
               <%= f.label "letter_to_business"%>
               <%= f.text_area :letter_to_business, class: 'cart-letter' %>
               <div class="actions">
-                <%= f.submit "Apply Now" %>
+                <% if current_user %>
+                  <%= f.submit "Apply Now" %>
+                <% else %>
+                  You must be logged in to apply
+                <% end %>
               </div>
               <% end %>
             </div>
