@@ -2,8 +2,13 @@ html {
   background: #ffffff;
 }
 
-.format-panel{
+.description-field {
   height: 110px;
+  width: 400px;
+  overflow-y: scroll;
+}
+
+.format-panel{
   height: 110px;
   overflow-y: scroll;
 }

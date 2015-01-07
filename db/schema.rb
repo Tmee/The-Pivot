@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150106192913) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,13 +37,13 @@ ActiveRecord::Schema.define(version: 20150106192913) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
-    t.boolean  "active", default: false
+    t.boolean  "active",      default: false
   end
 
   create_table "candidacies", force: true do |t|
     t.integer  "user_id"
     t.integer  "listing_id"
-    t.string   "status"
+    t.string   "status",             default: "pending"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "letter_to_business"
