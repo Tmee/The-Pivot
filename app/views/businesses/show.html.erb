@@ -1,4 +1,4 @@
-  <div class="jumbotron">
+  <div class="jumbotron text-center">
     <div class="container">
 <%if @current_business == nil%>
     <h2>Sorry, that business does not have an account with EmployMe</h2>
@@ -18,18 +18,24 @@
     </div>
   </div>
   <div class="container">
-    <h2>Available Jobs</h2>
-      <div class="row">
-        <% @listings.each do |listing| %>
-          <div class="col-md-4">
-            <h3><%=listing.title%></h3>
-            <p><%=listing.description%></p>
-            <p><%= link_to "Add to basket", add_listing_path(listing.id), method: :post, class: "btn btn-default" %><br></p>
+    <div class="row">
+      <% @listings.each do |listing| %>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check"><%=listing.title%></h4>
           </div>
-        <%end%>
+          <div class="panel-body format-panel-listings">
+            <h4><%= listing.description %></h4>
+            <h6>Wage:    $<%= listing.wage%>
+              Hours per week:    <%= listing.hours %><br>
+              Number of postions open:    <%= listing.number_of_positions %><br>
+              Closing date:    <%= listing.end_date %></h6>
+              <%= link_to "Add to basket", add_listing_path(listing.id), method: :post, class: "btn btn-default" %><br>
+          </div>
+        </div>
       </div>
-    <hr>
+      <%end %>
+    </div>
   </div>
 <%end%>
-
-

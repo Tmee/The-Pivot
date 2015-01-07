@@ -1,12 +1,21 @@
+<div class="jumbotron text-center">
+  <h1><%= @listing.title %></h1>
+</div>
+
 <div class="container">
   <div class="row">
-    Title:<br><%= @listing.title %><br>
-    COMPANY ID:<br><%= @listing.business_id %><br>
-    Description:<br><%= @listing.description %><br>
-    Wage:<br>$<%= @listing.wage %><br>
-    Hours per week:<br><%= @listing.hours %><br>
-    Number of postions open:<br><%= @listing.number_of_positions %><br>
-    Closing date:<br><%= @listing.end_date %><br>
-    <br><br>
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4><i class="fa fa-fw fa-check">Description: <%= @listing.description %></h4>
+        </div>
+        <div class="panel-body format-panel-listings-show">
+          <b>Wage:</b>$ <%= @listing.wage %><br>
+          <b>Hours per week:</b> <%= @listing.hours %><br>
+          <b>Number of postions open:</b> <%= @listing.number_of_positions %><br>
+          <b>Closing date:</b> <%= @listing.end_date %><br>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
