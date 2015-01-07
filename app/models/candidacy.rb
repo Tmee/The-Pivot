@@ -18,4 +18,8 @@ class Candidacy < ActiveRecord::Base
     update_attribute :status, "accepted"
   end
 
+  def email
+    listing.email
+  end
+
 end
