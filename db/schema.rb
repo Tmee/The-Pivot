@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150106192913) do
   create_table "candidacies", force: true do |t|
     t.integer  "user_id"
     t.integer  "listing_id"
-    t.string   "status",             default: "pending"
+    t.string   "status",      default: "pending"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "letter_to_business"

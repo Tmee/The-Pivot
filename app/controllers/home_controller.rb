@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
   end
 
@@ -15,4 +16,5 @@ class HomeController < ApplicationController
     @profiles = { alex: "dalexj", chandra: "chandracarney",
                   kate: "katelane", zach: "zRouth" }
   end
+
 end
