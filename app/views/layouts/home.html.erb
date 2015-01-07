@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EmployMe</title>
+  <link rel="shortcut icon" href="assets/favicon.ico"/>
+  <link href='http://fonts.googleapis.com/css?family=Lato:900,400' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% flash.each do |name, msg| %>
+    <div class="flash"><%= content_tag :div, msg, class: name %></div>
+  <% end %>
+  <%= render "/layouts/header" %>
+  <%= render partial: "shared/flash", id: "flash" %>
+  <%= yield %>
+</body>
+  <!-- <%= render "/layouts/footer" %> -->
+</html>

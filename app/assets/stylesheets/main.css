@@ -14,14 +14,12 @@ html {
   height: 100px;
   width: 800px;
   font-size: 400%;
-  color: white;
-  background-color: black;
+  color: #00cc00;
   text-align:center;
-  opacity: .8;
   padding: 25px;
-  border-radius: 25px;
   margin: 0 auto;
-  margin_bottom: 25px
+  margin_bottom: 25px;
+  text-shadow: black 5px 5px 5px;
 }
 
 #jumbo {
@@ -228,13 +226,14 @@ footer p {
   color: #ccc;
   height: 5%;
 }
-button#jobs_button {
-  width: 500px;
-  border-radius: 25px;
-  background: #006eee;
-  margin: 0 auto;
-  margin-top: 25px
+
+.jobs_button {
+  min-height: 100px;
+  min-width: 300px;
+  padding-top: 22px;
+  font-size: 40px;
 }
+
 
 .new-user-form {
   width: 350px;
