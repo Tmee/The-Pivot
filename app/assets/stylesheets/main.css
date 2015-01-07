@@ -2,9 +2,20 @@ html {
   background: #ffffff;
 }
 
+.cart-letter {
+  height: 133px;
+  width: 518px;
+  overflow-y: scroll;
+}
+
 .description-field {
   height: 110px;
   width: 400px;
+  overflow-y: scroll;
+}
+
+.format-cart-panel {
+  height: 270px;
   overflow-y: scroll;
 }
 
