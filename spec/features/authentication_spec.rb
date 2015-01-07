@@ -4,19 +4,16 @@ describe 'user authentication', type: :feature do
   it 'creates a user' do
     visit root_path
 
-    save_and_open_page
-    # within(RegModal) do
-    #   page.should have_content('a_modal_content_here') # async
-    # end
+    within('#RegModal') do
+      fill_in 'user_full_name', with: 'Zach Routh'
+      fill_in 'user_user_name', with: 'zRouth'
+      fill_in 'user_email', with: 'zach12345@turing.io'
+      fill_in("Password", with: 'password')
+      fill_in('Password confirmation', with: 'password')
+      click_button 'Register'
+    end
 
-    # click_link_or_button 'Register!'
-    # expect(page).to have_content('#RegModal')
-    # fill_in 'Email', with: 'chandra123@gmail.com'
-    # fill_in 'Full name', with: 'Chandra1'
-    # fill_in 'Password', with: 'password'
-    # fill_in 'Password confirmation', with: 'password'
-    # click_button 'Create User'
-    # expect(page).to have_content("User created")
+    expect(page).to have_content("User created")
   end
 
   context 'when not logged in' do
