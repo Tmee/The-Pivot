@@ -3,22 +3,27 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 portfolio-item">
-      Your email is <%= @user.email %>
-    </div>
+  <div class="row text-center">
+    <img src="<%= @user.picture %>" media='thumbnail' alt="" style="width:150px;height:150px" />
+    <h4>Name: <%= @user.full_name %></h4>
+    <h6>Username: <%= @user.user_name %><br>
+      Email: <%= @user.email %><br><br>
+    <a class="btn btn-primary view-pdf" href="<%= @user.resume %>">View PDF</a>
+      <br><br>
   </div>
-</div><br><br>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 offset-4">
-      <%if @business.present?%>
-        <h3>Your Business :</h3>
-        <h4><%= link_to "#{@business.name}", admin_url(subdomain: "#{@business.slug}") %></h4>
-      <%else%>
-        Here you can <%= link_to "Create Business", new_business_path %>
-      <%end%>
+ <div class="row">
+  <%if @business.present?%>
+    <div class="col-md-6 text-right">
+      <%= link_to "#{@business.name} Admin Page", admin_url(subdomain: "#{@business.slug}"), class: "btn btn btn-primary" %><br/><br/>
+    </div>
+  <%else%>
+    <div class="col-md-6 text-right">
+     <%= link_to "Create Business", new_business_path, class: "btn btn btn-primary" %><br/><br/>
+    </div>
+  <%end%>
+    <div class="col-md-6">
+      <%= link_to "Edit User Details",   edit_user_path(@current_user), class: "btn btn btn-primary" %><br/><br/>
     </div>
   </div>
-</div><br><br>

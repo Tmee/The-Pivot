@@ -36,6 +36,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    authorize! :update, current_user
+    current_user.update(user_params)
+    redirect_to user_path(current_user)
+  end
+
 
   def update_business_owner
     user = User.find_by email: params[:user][:email]
