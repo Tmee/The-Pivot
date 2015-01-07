@@ -85,9 +85,10 @@
           Upload a headshot<br>
           <%= f.file_field :picture , placeholder: 'Picture'%></br>
           Upload a resume PDF Only<br>
-          <%= f.file_field :resume , placeholder: 'Resume'%>
-          <%= f.submit "Register" %>
-          <%= link_to "Free converter",    "http://www.freepdfconvert.com/"    %><br>
+          <%= f.file_field :resume , placeholder: 'Resume'%><br>
+          <div class="actions">
+            <%= f.submit "Register" %>
+          </div>
           <%end%>
         <% end %>
       </div>
