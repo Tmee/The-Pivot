@@ -1,4 +1,4 @@
-  class Subdomain
+class Subdomain
   def self.matches?(request)
     request.subdomain.present? && request.subdomain != "www" && request.subdomain != ""
   end
@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     resources :listings
     get '/'     => "businesses#show"
     get '/admin' => 'businesses#admin'
+    get '/admin/listings/:id/candidacies' => 'candidacies#index'
+    # get '/admin/listings/:listing_id/candidacies/:id/accept' => 'candidacies#accept', as: :accept_candidacy
+    # get '/admin/listings/:listing_id/candidacies/:id/reject' => 'candidacies#reject', as: :reject_candidacy
+    get '/admin/candidacies/:id/accept' => 'candidacies#accept', as: :accept_candidacy
+    get '/admin/candidacies/:id/reject' => 'candidacies#reject', as: :reject_candidacy
     get '/admin/edit' => 'businesses#edit'
     post '/:email' => 'users#update_business_owner'
   end
@@ -29,7 +34,11 @@ Rails.application.routes.draw do
   # resources :orders, only: [:index, :show, :create, :update]
   resources :users
   resources :listings
-  resources :businesses, only: [:index, :new, :create]
+  resources :businesses, only: [:index, :new, :create] do
+    resources :listings, :candidacies
+  end
+
+  resources :candidacies, only: [:new, :create]
 
   # You can have the root of your site routed with "root"
   # namespace :businesses, as: :business, path: '/:slug' do
