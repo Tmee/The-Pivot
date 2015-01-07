@@ -9,6 +9,7 @@ class CartController < ApplicationController
       @listings = session[:cart].keys.map do |id|
         Listing.find(id)
       end
+      @candidacy = Candidacy.new
     end
   end
 
