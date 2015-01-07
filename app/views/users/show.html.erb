@@ -6,10 +6,15 @@
   <div class="row text-center">
     <img src="<%= @user.picture %>" media='thumbnail' alt="" style="width:150px;height:150px" />
     <h4>Name: <%= @user.full_name %></h4>
-    <h6>Username: <%= @user.user_name %><br>
-      Email: <%= @user.email %><br><br>
-    <a class="btn btn-primary view-pdf" href="<%= @user.resume %>">View PDF</a>
-      <br><br>
+    <%if @user.user_name?%>
+    <strong>Username:</strong> <%= @user.user_name %><br>
+    <%end%>
+    <strong>Email:</strong> <%= @user.email %><br><br>
+    <div class="container">
+      <div class="row">
+        <a class="btn btn-primary view-pdf" href="<%= @user.resume %>">View PDF</a>
+      </div>
+    </div><br><br>
   </div>
 </div>
 
