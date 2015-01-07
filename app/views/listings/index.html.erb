@@ -5,16 +5,21 @@
 <div class="container">
   <div class="row">
     <% @listings.each do |listing| %>
-      <div class="col-md-4 portfolio-item">
-        <h4><%= listing.title %></h4>
-        <h6>Description:    <%= listing.description %><br>
-        Wage:    $<%= listing.wage %><br>
-        Hours per week:    <%= listing.hours %><br>
-        Number of postions open:    <%= listing.number_of_positions %><br>
-        Closing date:    <%= listing.end_date %></h6>
-        <%= link_to "Add to basket", add_listing_path(listing.id), method: :post, class: "btn btn-default" %><br>
-        <br><br>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check"><%=listing.title%></h4>
+          </div>
+          <div class="panel-body format-panel-listings">
+            <h4><%= listing.description %></h4>
+            <h6>Wage:    $<%= listing.wage%>
+              Hours per week:    <%= listing.hours %><br>
+              Number of postions open:    <%= listing.number_of_positions %><br>
+              Closing date:    <%= listing.end_date %></h6>
+              <%= link_to "Add to basket", add_listing_path(listing.id), method: :post, class: "btn btn-default" %><br>
+          </div>
+        </div>
       </div>
-    <% end %>
+    <%end %>
   </div>
 </div>

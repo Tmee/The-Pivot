@@ -8,6 +8,16 @@ html {
   overflow-y: scroll;
 }
 
+.format-panel-listings {
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.format-panel-listings-show {
+  height: 150px;
+  overflow-y: scroll;
+}
+
 .iframe-container {
   padding-bottom: 60%;
   padding-top: 30px; height: 0; overflow: hidden;
