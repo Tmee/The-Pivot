@@ -53,6 +53,11 @@ html {
   overflow-y: scroll;
 }
 
+.format-panel-b-show {
+  height: 150px;
+  overflow-y: scroll;
+}
+
 .format-panel-listings-show {
   height: 150px;
   overflow-y: scroll;
