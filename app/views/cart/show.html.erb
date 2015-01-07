@@ -5,23 +5,35 @@
 
 <div class="container">
   <% if session[:cart] %>
+    <h3>Pending Jobs</h3><br>
     <div class="container">
-      <h3>YOUR JOB BASKET CURRENTLY CONTAINS:</h3>
-      <br>
       <% @listings.each do |listing| %>
-        <p><strong>Company: </strong><%= listing.title %></p>
-        <p><strong>Job Description: </strong><%= listing.description %></p>
-        <p><strong>Wage: </strong><%= listing.wage %></p>
-        <p><strong>Hours: </strong><%= listing.hours %></p>
-
-        <%= form_for @candidacy, controller: "candidacies", action: "create" do |f| %>
-          <%= hidden_field_tag(:listing_id, "#{listing.id}") %>
-          <%= f.label :letter_to_business %>
-          <%= f.text_area :letter_to_business %>
-          <%= f.submit %>
-        <% end %>
-        <br>
-      <% end %>
+      <div class="col-md-12">
+        <div class="panel panel-primary format-cart-panel">
+          <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check">Job Title: <%= listing.title %></h4>
+          </div>
+          <div class="panel-body">
+            <div class="col-md-6">
+              <b>Wage:</b>$ <%= listing.wage %><br>
+              <b>Hours per week:</b> <%= listing.hours %><br>
+              <b>Number of postions open:</b> <%= listing.number_of_positions %><br>
+              <b>Closing date:</b> <%= listing.end_date %><br>
+            </div>
+            <div class="col-md-6">
+              <%= form_for @candidacy, controller: "candidacies", action: "create" do |f| %>
+              <%= hidden_field_tag(:listing_id, "#{listing.id}") %>
+              <%= f.label "letter_to_business"%>
+              <%= f.text_area :letter_to_business, class: 'cart-letter' %>
+              <div class="actions">
+                <%= f.submit "Apply Now" %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%end%>
     </div>
   <% else %>
     <p>There are no items in the cart</p>
