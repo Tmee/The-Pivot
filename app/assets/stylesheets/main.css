@@ -1,5 +1,31 @@
 html {
-  background: #ffffff;
+  background: white;
+}
+
+.wrapper {background:url(http://thirtyorsomething.com/wp-content/uploads/2014/08/o-COFFEE-SHOP-LAPTOPS-facebook.jpg) center center;
+  height: 400px;
+  bottom: 0;
+  position: relative;
+  line-height: 33px;
+  text-align: center;
+  }
+
+#fast {
+  height: 100px;
+  width: 800px;
+  font-size: 400%;
+  color: white;
+  background-color: black;
+  text-align:center;
+  opacity: .8;
+  padding: 25px;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin_bottom: 25px
+}
+
+#jumbo {
+  margin-bottom: 0px;
 }
 
 .cart-letter {
@@ -25,7 +51,7 @@ html {
 }
 
 .format-panel-listings {
-  height: 150px;
+  height: 250px;
   overflow-y: scroll;
 }
 
@@ -87,7 +113,7 @@ html {
   left: 25%;
 }
 
-img { border-radius: 25px;
+img#user_picture { border-radius: 25px;
       height: 300px;
       width: 100%;
 }
@@ -155,10 +181,12 @@ div#box {
   background-color: lightgrey;
   opacity: .9;
   padding: 25px;
-  margin: 25px;
   border-radius: 25px;
   z-index: 100;
-  text-align: left;
+  text-align: center;
+  align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 div#statement_left {
@@ -201,9 +229,11 @@ footer p {
   height: 5%;
 }
 button#jobs_button {
-  width: 100%;
+  width: 500px;
   border-radius: 25px;
   background: #006eee;
+  margin: 0 auto;
+  margin-top: 25px
 }
 
 .new-user-form {
