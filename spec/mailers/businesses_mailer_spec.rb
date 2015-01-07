@@ -12,7 +12,6 @@ RSpec.describe BusinessesMailer, :type => :mailer do
   end
 
   it 'sends an email when a candidate applies for a job' do
-    @candidacy = Candidacy.new(email: )
     BusinessesMailer.candidacy_email(@candidacy).deliver
     result = ActionMailer::Base.deliveries.last
 
