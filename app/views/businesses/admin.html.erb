@@ -17,7 +17,7 @@
         <div class="panel-heading">
           <h5>Want to add another owner to your business?</h5>
         </div>
-        <div class="panel-body format-panel">
+        <div class="panel-body">
           <div class="formfield">
             <%= form_for @user, controller: 'users', action: 'udpate_business_owner' do |form| %>
               <div class="field">
@@ -25,7 +25,7 @@
                 <%= form.email_field :email, size: 50 %><br>
               </div><br>
               <div class="actions">
-                <%= form.submit('Add Co-Owner') %>
+                <%= form.submit 'Add Co-Owner', :class => "btn btn-default" %>
               </div>
             <% end %>
           </div>
