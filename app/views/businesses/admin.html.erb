@@ -48,7 +48,7 @@
                     <ul class="stack button-group">
                       <li><%= link_to 'Edit', edit_listing_path(listing), class: "button tiny" %></li>
                       <li><%= link_to 'Destroy', admin_listing_path(listing), class: "button tiny", method: :delete, data: { confirm: 'Are you sure?' } %></li><br><br>
-                        <li><%=listing.candidacies.count%>  <%= link_to("Pending Applications", "/admin/listings/#{listing.id}/candidacies") %></li>
+                        <li><%=listing.candidacies.pending.count%>  <%= link_to("Pending Applications", "/admin/listings/#{listing.id}/candidacies") %></li>
                     </ul>
                   </td>
                 </tr>
