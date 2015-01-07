@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
-      <h1>Job Listing Creator</h1>
+      <h1>Job Listing Editor</h1>
       <%= form_for @listing do |f| %>
       <%= f.label :title %><br>
       <%= f.text_field :title, placeholder: 'Title', size: "60x60" %></br></br>
       <%= f.label :description %><br>
-      <%= f.text_field :description, placeholder: 'Description', size: "20x30" %></br></br>
+      <%= f.text_area :description, placeholder: 'Description', :class => "description-field" %></br></br>
       <%= f.label :wage %><br>
       <%= f.number_field :wage, placeholder: 'Wage', size: "20x30" %></br></br>
       <%= f.label :hours %><br>
