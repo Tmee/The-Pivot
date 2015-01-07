@@ -1,13 +1,14 @@
+<div class="row text-center">
+  <div class="jumbotron">
+    <h2>Web Admin Home</h2>
+  </div>
+</div>
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>Welcome Web Administrator, <%= @current_user.full_name %></h2>
-    </div>
+  <div class="row text-center">
+    <h3><%= link_to "View All Users", users_url(subdomain: 'www')%></h3>
   </div>
   <div class="row">
-    <div class="col-md-12">
       <h3>All Businesses :</h3>
-    </div>
   </div><br/>
   <div class="row">
     <%@businesses.each do |business|%>
