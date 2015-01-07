@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :users
   resources :listings
   resources :businesses, only: [:index, :new, :create]
+  resources :candidacies
 
   # You can have the root of your site routed with "root"
   # namespace :businesses, as: :business, path: '/:slug' do

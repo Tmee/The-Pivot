@@ -1,4 +1,7 @@
-FactoryGirl.define do  factory :listing do
+FactoryGirl.define do  factory :candidacy do
+    
+  end
+  factory :listing do
     
   end
   factory :business do

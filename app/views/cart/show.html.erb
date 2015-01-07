@@ -15,6 +15,7 @@
         <p><strong>Job Description: </strong><%= listing.description %></p>
         <p><strong>Wage: </strong><%= listing.wage %></p>
         <p><strong>Hours: </strong><%= listing.hours %></p>
+
         <%= form_for @candidacy do |f| %>
           <%= hidden_field_tag(:listing_id, "#{listing.id}") %>
           <%= f.label :letter_to_business %>
