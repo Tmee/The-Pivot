@@ -1,5 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe Candidacy, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:candidacy) do
+    Candidacy.new(status: 'pending', letter_to_business: '')
+  end
+
+  it 'is valid without a status' do
+    candidacy.save
+    candidacy.status = nil
+    expect(candidacy).to be_valid
+  end
+
+  it 'is valid without a letter to business' do
+    candidacy.status = nil
+    expect(candidacy).to be_valid
+  end
+
 end
