@@ -2,18 +2,11 @@
   <div class="container-fluid">
 
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand active">EmployMe</a>
+      <%= link_to "EmployMe", root_url(subdomain: 'www'), class: "navbar-brand active" %>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_url(subdomain: 'www') %></li>
         <li><%= link_to "All Listings", listings_url(subdomain: 'www') %></li>
         <li><%= link_to "All Businesses", businesses_url(subdomain: 'www') %></li>
         <% if current_user %>
@@ -28,7 +21,7 @@
         <% if current_user == nil %>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn btn-default" data-toggle="modal" data-target="#RegModal">
-            Register!
+            Register
           </button>
           <!-- <%= link_to "Register", new_user_path, class: "btn btn-default" %> -->
           <!-- <div class="form-group">
@@ -36,7 +29,7 @@
             <input type="password" id="login_info" name="password" value="" placeholder="Password">
           </div> -->
           <button type="button" class="btn btn btn-default" data-toggle="modal" data-target="#LoginModal">
-            Login!
+            Login
           </button>
           <!-- <%= link_to "Login", login_path, class: "btn btn-default" %> -->
           <%= link_to cart_path, class: "btn btn-default" do %>
@@ -84,17 +77,24 @@
         <% end %>
         <%unless current_user.present? %>
           <%= form_for @user do |f| %>
-          <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br></br>
-          <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br></br>
-          <%= f.text_field :email, placeholder: 'Email', size: "28x30" %></br></br>
-          <%= f.password_field   :password, placeholder: 'Password', size: "28x30" %></br></br>
-          <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br></br>
-          Upload a headshot<br>
-          <%= f.file_field :picture , placeholder: 'Picture'%></br>
-          Upload a resume PDF Only<br>
+          <%= f.label :full_name %><br>
+          <%= f.text_field :full_name, placeholder: 'Full Name', size: "28x50" %></br>
+          <%= f.label :user_name %><br>
+          <%= f.text_field :user_name, placeholder: 'Username', size: "28x30" %></br>
+          <%= f.label :email %><br>
+          <%= f.text_field :email, placeholder: 'Email', size: "28x30" %></br>
+          <%= f.label :password %><br>
+          <%= f.password_field   :password, placeholder: 'Password', size: "28x30" %></br>
+          <%= f.label :password_comfirmation %><br>
+          <%= f.password_field   :password_comfirmation, placeholder: 'Password Comfirmation', size: "28x30" %></br>
+          <!-- Upload a headshot<br> -->
+          <%= f.label :upload_a_headshot %><br>
+          <%= f.file_field :picture , placeholder: 'Picture'%>
+          <!-- Upload a resume<br> -->
+          <%= f.label :upload_a_resume %><br>
           <%= f.file_field :resume , placeholder: 'Resume'%><br>
           <div class="actions">
-            <%= f.submit "Register" %>
+            <%= f.submit "Register", :class => 'btn btn-default' %>
           </div>
           <%end%>
         <% end %>
@@ -119,13 +119,14 @@
             <%= f.label :password %><br>
             <%= f.password_field :password, placeholder: 'Password', size: "28x30" %>
           </div>
+          <div class="note">Not a user?<br>
+            Please sign up today.
+          </div>
+          <br>
           <div class="actions">
-            <%= f.submit "Login" %>
+            <%= f.submit "Login", :class => 'btn btn-default'  %>
           </div>
           <% end %>
-          <br>
-          <div class="note">Not a user?<br>
-            Please sign up today.</div>
         </div>
       </div>
     </div>
