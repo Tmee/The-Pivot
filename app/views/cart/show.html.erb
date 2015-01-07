@@ -37,7 +37,21 @@
       <%end%>
     </div>
   <% else %>
-    <p>There are no items in the cart</p>
+    <div class="container">
+      <div class="row text-center">
+        <h2>There are no items in the cart</h2>
+        <h4>Please add some jobs to your basket to apply</h4><br><br>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-6 text-right">
+         <%= link_to "View All Listings", listings_path, class: "btn btn btn-primary" %><br/><br/>
+        </div>
+        <div class="col-md-6">
+          <%= link_to "View all Business",   businesses_path, class: "btn btn btn-primary" %><br/><br/>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
