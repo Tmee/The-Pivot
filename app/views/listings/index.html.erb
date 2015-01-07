@@ -6,11 +6,11 @@
   <div class="row">
     <% @listings.each do |listing| %>
       <div class="col-md-4">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary format-panel-listings">
           <div class="panel-heading">
             <h4><i class="fa fa-fw fa-check"><%=listing.title%></h4>
           </div>
-          <div class="panel-body format-panel-listings">
+          <div class="panel-body ">
             <h4><%= listing.description %></h4>
             <h6>Wage:    $<%= listing.wage%>
               Hours per week:    <%= listing.hours %><br>
