@@ -2,6 +2,12 @@ html {
   background: #ffffff;
 }
 
+.format-panel{
+  height: 110px;
+  height: 110px;
+  overflow-y: scroll;
+}
+
 .iframe-container {
   padding-bottom: 60%;
   padding-top: 30px; height: 0; overflow: hidden;
