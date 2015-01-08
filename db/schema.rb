@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20150106192913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "addresses", force: true do |t|
-    t.string   "street_number"
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "businesses", force: true do |t|
     t.string   "name"
     t.string   "address"
