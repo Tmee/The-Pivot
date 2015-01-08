@@ -1,2 +1,2 @@
-module ListingsHelper
+module JobListingsHelper
 end
