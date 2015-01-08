@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+
   def destroy
     session[:cart] = {}
     redirect_to :back

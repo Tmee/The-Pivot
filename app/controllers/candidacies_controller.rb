@@ -31,8 +31,4 @@ class CandidaciesController < ApplicationController
     candidacy.reject
     redirect_to :back
   end
-
-private
-
-
 end

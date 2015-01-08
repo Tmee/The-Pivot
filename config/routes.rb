@@ -40,14 +40,6 @@ Rails.application.routes.draw do
 
   resources :candidacies, only: [:new, :create]
 
-  # You can have the root of your site routed with "root"
-  # namespace :businesses, as: :business, path: '/:slug' do
-  #   resources :job_listing
-  # end
-  get '/contact' => 'home#contact'
-  get '/about' => 'home#about'
-
-
   get '/code' => redirect('https://github.com/Tmee/The-Pivot')
 
   get '/login' => 'sessions#new',  :as => :login
@@ -58,11 +50,6 @@ Rails.application.routes.draw do
   delete '/cart' => 'cart#destroy'
   post '/listings/:id/add_to_cart' => 'cart#update', :as => :add_listing
 
-
-  get '/checkout' => 'orders#new'
-  get '/my_orders' => 'orders#my_orders'
-
-  # get 'files/:id' => 'posts#destroy_file', :via => :delete, :as => :destroy_file
   get '/admin', to: 'admin/base_admin#index', as: :admin_index
   namespace :admin do
     resources :businesses, :users, :listings
