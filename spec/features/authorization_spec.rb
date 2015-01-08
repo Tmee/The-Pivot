@@ -24,20 +24,9 @@ describe 'Application authorizaiton' do
     end
 
     it "cannot access a user's page" do
-      visit user_path(1)
+      visit users_path
       expect(page).to have_content('Not Authorized')
-      expect(page.current_path).to_not eq user_path
     end
   end
-
-  # context 'when logged in' do
-  #   user = FactoryGirl.create(:admin)
-  #   visit login_path
-  #   fill_in 'Email', with: user.email
-  #   fill_in 'Password', with: user.password
-  #   click_button 'Login'
-  #   visit users_path
-  #   expect(page).to have_content('All users')
-  # end
 
 end
