@@ -37,9 +37,14 @@ class ApplicationController < ActionController::Base
   end
 
   def require_business_admin
-    unless current_user.present? && @current_user.business_id == current_business.id || current_user.present? && @current_user.admin?
+    unless (current_user.present? && is_owner?) || (current_user.present? && @current_user.admin?)
       redirect_to root_path, :alert => "Not Authorized"
     end
+  end
+
+
+  def is_owner?
+    @current_user.business_id == current_business.id
   end
 
   def modal_new_user
