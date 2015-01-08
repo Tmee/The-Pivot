@@ -4,25 +4,15 @@ class Subdomain
   end
 end
 
-# class RootDomain
-#   @subdomains = ["www"]
-
-#   def self.matches?(request)
-#     @subdomains.include?(request.subdomain) || request.subdomain.blank?
-#   end
-# end
-
 Rails.application.routes.draw do
 
-  # business-name.lvh.me
   constraints(Subdomain) do
     resources :business, only: [:show]
     resources :listings
     get '/'     => "businesses#show"
     get '/admin' => 'businesses#admin'
     get '/admin/listings/:id/candidacies' => 'candidacies#index'
-    # get '/admin/listings/:listing_id/candidacies/:id/accept' => 'candidacies#accept', as: :accept_candidacy
-    # get '/admin/listings/:listing_id/candidacies/:id/reject' => 'candidacies#reject', as: :reject_candidacy
+
     get '/admin/candidacies/:id/accept' => 'candidacies#accept', as: :accept_candidacy
     get '/admin/candidacies/:id/reject' => 'candidacies#reject', as: :reject_candidacy
     get '/admin/edit' => 'businesses#edit'
@@ -30,8 +20,7 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
-  # resources :businesses, path: '', param: :slug
-  # resources :orders, only: [:index, :show, :create, :update]
+
   resources :users
   resources :listings
   resources :businesses, only: [:index, :new, :create] do
