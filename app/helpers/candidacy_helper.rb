@@ -1,2 +1,2 @@
-module CandidacyHelper
+  module CandidacyHelper
 end
